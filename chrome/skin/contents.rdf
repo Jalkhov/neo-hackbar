@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<rdf:rdf xmlns:chrome="http://www.mozilla.org/rdf/chrome#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:seq about="urn:mozilla:skin:root">
+        <rdf:li resource="urn:mozilla:skin:classic/1.0">
+        </rdf:li>
+    </rdf:seq>
+    <rdf:description about="urn:mozilla:skin:classic/1.0">
+        <chrome:packages>
+            <rdf:seq about="urn:mozilla:skin:classic/1.0:packages">
+                <rdf:li resource="urn:mozilla:skin:classic/1.0:livehttpheaders">
+                </rdf:li>
+            </rdf:seq>
+        </chrome:packages>
+    </rdf:description>
+</rdf:rdf>

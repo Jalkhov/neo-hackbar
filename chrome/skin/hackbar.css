@@ -1,0 +1,113 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+menu#firstMenuItem {
+    margin-left: 88px;
+}
+
+/* Fixed bug https://bugzilla.mozilla.org/show_bug.cgi?id=1037303 */
+
+toolbar#hackBarToolbar {
+    max-height: 1000px !important;
+}
+
+toolbarbutton#hackBarWebButton {
+    list-style-image: url("chrome://hackbar/skin/web.png");
+}
+
+toolbarbutton#hackBarCopyButton {
+    list-style-image: url("chrome://hackbar/skin/load.png");
+}
+
+toolbarbutton#hackBarSplitButton {
+    list-style-image: url("chrome://hackbar/skin/split.gif");
+}
+
+/* Button */
+
+#hackBarToolbarButton {
+    list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+}
+
+toolbar[iconsize="small"] #hackBarToolbarButton {
+  list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+}
+
+/* t.PRO & Sweetyow MOD's */
+
+#enc {
+    padding-left: 5px;
+}
+
+toolbarbutton.hackBarQuickEncodeButton {
+    list-style-image: url("chrome://hackbar/skin/quick1.png");
+}
+
+toolbarbutton.hackBarQuickEncodeButton2 {
+    list-style-image: url("chrome://hackbar/skin/quick2.png");
+}
+
+toolbarbutton.hackBarQuickEncodeButton3 {
+    list-style-image: url("chrome://hackbar/skin/quick3.png");
+}
+
+toolbarbutton.hackBarSave {
+    list-style-image: url("chrome://hackbar/skin/disk.png");
+}
+
+.quick {
+    margin-top: 5px;
+}
+
+.adjust {
+    font-size: 9px;
+}
+
+.replace {
+    font-size: 9px;
+    margin-left: 8px;
+}
+
+#separator {
+    height: 3px;
+    border-top: 1px dashed grey;
+    margin-top: 5px;
+    margin-bottom: 9px;
+    margin-left: 3px;
+}
+
+#separator2 {
+    height: 3px;
+    border-left: 1px dashed grey;
+    margin-bottom: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#separator3 {
+    height: 3px;
+    border-left: 1px dashed grey;
+    margin-bottom: 2px;
+    margin-left: 3px;
+}
+
+.replace2 {
+    margin: 0px;
+    margin-left: 6px;
+    padding: 0px;
+    height: 15px;
+    font-size: 9px;
+    padding-left: 2px;
+}
+
+#replace_holder {
+    margin-left: 3px;
+}
+
+#rlabel {
+    margin-top: 7px;
+}
+
+#adjustpanel {
+    margin-right: 3px;
+    margin-top: 2px;
+}
