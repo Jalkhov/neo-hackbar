@@ -1,15 +1,15 @@
 /* This is to add a toolbar button */
 #livehttpheaders-toolbar-button
-{ 
+{
     list-style-image: url("chrome://livehttpheaders/skin/img/Logo_24.png");
-    -moz-image-region: rect(0px 24px 24px 0px); 
+    -moz-image-region: rect(0px 24px 24px 0px);
 }
 
-[iconsize="small"] #livehttpheaders-toolbar-button 
-{ 
-    list-style-image: url("chrome://livehttpheaders/skin/img/Logo_16.png"); 
-    -moz-image-region: rect( 0px 16px 16px 0px); 
-} 
+[iconsize="small"] #livehttpheaders-toolbar-button
+{
+    list-style-image: url("chrome://livehttpheaders/skin/img/Logo_16.png");
+    -moz-image-region: rect( 0px 16px 16px 0px);
+}
 
 /* This is to add a pageInfo button */
 #headerInfoTab
@@ -27,7 +27,7 @@
 /* The URL line (first line of each block) */
 .livehttpheaders treechildren[flex="1"]:-moz-tree-cell(URL)
 {
-    background-image: url(img/URL.png); 
+    background-image: url(img/URL.png);
     background-color: #DFE7EA;
     padding-left: 14px;
 }

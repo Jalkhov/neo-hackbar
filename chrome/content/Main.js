@@ -560,7 +560,7 @@ HackBar.Main.prototype = {
         }
         this.setSelectedText(result);
     },
-    // Reverse a string 
+    // Reverse a string
     reverseString: function() {
         var originalString = this.getSelectedText();
         var splitext = originalString.split("");

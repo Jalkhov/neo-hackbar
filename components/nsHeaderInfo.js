@@ -31,7 +31,7 @@ livehttpheaders.nshi.JS_SCRIPTABLEINPUTSTREAM_CID = "@mozilla.org/scriptableinpu
 livehttpheaders.nshi.JS_SCRIPTABLEINPUTSTREAM = "nsIScriptableInputStream";
 livehttpheaders.nshi.JS_ScriptableInputStream = new Components.Constructor(livehttpheaders.nshi.JS_SCRIPTABLEINPUTSTREAM_CID, livehttpheaders.nshi.JS_SCRIPTABLEINPUTSTREAM);
 /*
- * Utility functions 
+ * Utility functions
  */
 livehttpheaders.nshi.dtb = function(v, d) {
     var tmp = ("00000000000000000000000000000000" + Math.round(v).toString(2)).slice(-d);
@@ -122,7 +122,7 @@ livehttpheaders.nshi.nsHeaderInfo = {
                 observerService.addObserver(livehttpheaders.nshi.nsHeaderInfo, "http-on-modify-request", false);
                 //observerService.addObserver(nsHeaderInfo, "http-on-examine-response", false);
             }
-            // Initialisation of all needed vars 
+            // Initialisation of all needed vars
             this.observers = new Array();
             this.delays = new Array();
         } else {
@@ -154,7 +154,7 @@ livehttpheaders.nshi.HeaderInfoVisitor = function(oHttp) {
     this.headers.requestHeaders = null;
     this.headers.response = "";
     this.headers.responseHeaders = null;
-    // Initialize headers 
+    // Initialize headers
     this.visitRequest(this);
     this.visitResponse(this);
 }

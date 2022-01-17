@@ -7,7 +7,7 @@ pref("extensions.tamperdata.forceCaching", "true");
 pref("extensions.tamperdata.prefill.static.add.Struts cancel",  "org.apache.struts.taglib.html.CANCEL=true");
 // on every field
 pref("extensions.tamperdata.prefill.static.xss.Alert",  "<script>alert('hello');</script>");
-pref("extensions.tamperdata.prefill.static.xss.> Alert",  ">\"'><script>alert(‘XSS')</script>");
+pref("extensions.tamperdata.prefill.static.xss.> Alert",  ">\"'><script>alert(â€˜XSS')</script>");
 pref("extensions.tamperdata.prefill.static.xss.%22 Alert",  ">%22%27><img%20src%3d%22javascript:alert(%27XSS%27)%22>");
 pref("extensions.tamperdata.prefill.static.xss.image Alert",  ">\"'><img%20src%3D%26%23x6a;%26%23x61;%26%23x76;%26%23x61;%26%23x73;%26%23x63;%26%23x72;%26%23x69;%26%23x70;%26%23x74;%26%23x3a;alert(%26quot;XSS%26quot;)>");
 pref("extensions.tamperdata.prefill.static.xss.background Alert",  "AK%22%20style%3D%22background:url(javascript:alert(%27XSS%27))%22%20OS%22");

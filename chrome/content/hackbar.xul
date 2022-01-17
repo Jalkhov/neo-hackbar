@@ -483,7 +483,7 @@
                     <menuitem label="ssi shell" oncommand="HackBar.SQL.shell('ssi')" />
                     <menuitem label="An0n 3xPloiTeR Shell" oncommand="HackBar.SQL.shell('An0n-3xPloiTeR-Shell')" />
                     <menuitem label="An0n 3xPloiTeR Mini" oncommand="HackBar.SQL.shell('An0n-3xPloiTeR-mini-Shell')" />
- 
+
                     <menu class="menu-iconic" image="chrome://hackbar/skin/php.png" type="menu" label="WGET System">
                       <menupopup>
                         <menuitem label="WGET system (WSO Shells)" oncommand="HackBar.SQL.phpscripts('system')" />
@@ -3807,7 +3807,7 @@
                     </menu>
                   </menupopup>
                 </menu>
- 
+
                 <menu class="menu-iconic" image="chrome://hackbar/skin/injection.png" label="Find Injection Type">
                   <menupopup>
                     <menuitem label="Find It" oncommand="HackBar.VM.VariableMethod('Find It')" />
@@ -3942,7 +3942,7 @@
               </menupopup>
             </toolbarbutton>
             <!-- / HTML -->
- 
+
             <!-- ENCRYPTION MENU ITEMS -->
 
             <toolbarbutton type="menu" id="ENCRYPTION" label="ENCRYPTION" onmouseover="HackBar.GUI.openToolbarButton(this)">
@@ -3960,7 +3960,7 @@
             </toolbarbutton>
 
             <!-- / ENCRYPTION MENU ITEMS -->
- 
+
             <!-- MISC MENU ITEMS -->
             <toolbarbutton id="OTHER" type="menu" label="OTHER" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
@@ -3972,7 +3972,7 @@
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/text_uppercase.png" label="UPPERCASE" oncommand="HackBar.Strings.uppercaseString( )" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/arrow_switch.png" label="RaNdOmCaSe" oncommand="HackBar.Strings.randomcaseString( )" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripslashes.png" label="Strip Custom" oncommand="HackBar.Strings.stripcustom( )" />
- 
+
                 <menu label="Buffer overflow" class="menu-iconic" image="chrome://hackbar/skin/string.png">
                   <menupopup>
                     <menuitem label="128" oncommand="HackBar.Strings.generateOverflowString( 128 )" />

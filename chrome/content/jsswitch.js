@@ -31,7 +31,7 @@ jsoffNamespace.myPrefObserver = {
         var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
         // For this._branch we ask that the preferences for extensions.myextension. and children
         this._branch = prefService.getBranch("javascript.");
-        // Now we queue the interface called nsIPrefBranch2. This interface is described as:  
+        // Now we queue the interface called nsIPrefBranch2. This interface is described as:
         // "nsIPrefBranch2 allows clients to observe changes to pref values."
         this._branch.QueryInterface(Components.interfaces.nsIPrefBranch2);
         // Finally add the observer.
