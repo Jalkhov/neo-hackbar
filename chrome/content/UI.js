@@ -9,22 +9,29 @@ HackBar.UI = {
     // doing this addon for fun and don't think copying these few lines will
     // makes any bad to the original developer.
     //                                                    -- Pedro Laguna
-    openToolbarButton: function(currentToolbarButton) {
+    openToolbarButton: function (currentToolbarButton) {
         // If the toolbar button is set and is not open
         if (currentToolbarButton && !currentToolbarButton.open) {
             var toolbarButton = null;
-            var toolbarButtons = currentToolbarButton.parentNode.getElementsByTagName("toolbarbutton");
+            var toolbarButtons =
+                currentToolbarButton.parentNode.getElementsByTagName(
+                    "toolbarbutton"
+                );
             var toolbarButtonsLength = toolbarButtons.length;
             // Loop through the toolbar buttons
             for (var i = 0; i < toolbarButtonsLength; i++) {
                 toolbarButton = toolbarButtons.item(i);
                 // If the toolbar button is set, is not the same toolbar button and is open
-                if (toolbarButton && toolbarButton != currentToolbarButton && toolbarButton.open) {
+                if (
+                    toolbarButton &&
+                    toolbarButton != currentToolbarButton &&
+                    toolbarButton.open
+                ) {
                     toolbarButton.open = false;
                     currentToolbarButton.open = true;
                     break;
                 }
             }
         }
-    }
-}
+    },
+};

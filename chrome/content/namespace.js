@@ -1,6 +1,6 @@
 /**
  * HackBar namespace.
  */
-if ( "undefined" == typeof( HackBar ) ) {
-  var HackBar = {};
-};
+if ("undefined" == typeof HackBar) {
+    var HackBar = {};
+}
