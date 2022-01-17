@@ -1,0 +1,33 @@
+<!ENTITY vs.description "Shows all source files of a webpage.">
+<!ENTITY vs.author "Author">
+<!ENTITY vs.openintabfocus "Open in new tab">
+<!ENTITY vs.openintabblur "Open in new tab (background)">
+<!ENTITY vs.openinwindow "Open in new window">
+<!ENTITY vs.copyurl "Copy URL to clipboard">
+<!ENTITY vs.selecturl "-- Select URL --">
+<!ENTITY vs.close "Close Sidebar">
+<!ENTITY vs.refresh "Refresh">
+<!ENTITY vs.selectall "Select All">
+<!ENTITY vs.copy "Copy to clipboard">
+<!ENTITY vs.name "Name">
+<!ENTITY vs.value "Value">
+<!ENTITY vs.license "License">
+<!ENTITY vs.open "Open">
+<!ENTITY vs.about "About: View Source">
+<!ENTITY vs.defaultaction "Default action...">
+<!ENTITY vs.images "Images">
+<!ENTITY vs.links "Links">
+<!ENTITY vs.responseheaders "Response headers">
+<!ENTITY vs.vs "View Source">
+<!ENTITY vs.linksource "Source">
+<!ENTITY vs.sidebar "View Source Sidebar">
+<!ENTITY vs.sidebar.accesskey "c">
+<!ENTITY vs.metadata "Meta Data">
+<!ENTITY vs.colors "Colors">
+<!ENTITY vs.color "Color">
+<!ENTITY vs.colorcsstype "CSS Property">
+<!ENTITY vs.resizertooltip "Open/close the View Source sidebar">
+<!ENTITY vs.translators "Translators">
+<!ENTITY vs.lang.fr "French">
+<!ENTITY vs.lang.de "German">
+<!ENTITY vs.email "E-mail">

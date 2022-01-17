@@ -1,0 +1,36 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#listbox
+{
+	min-width: 40em;
+}
+
+#listbox listcell > textbox
+{
+	-moz-appearance: none;
+	margin: 2px;
+	padding: 1px;
+	color: inherit;
+	border: 1px solid transparent;
+	-moz-border-top-colors: transparent;
+	-moz-border-right-colors: transparent;
+	-moz-border-bottom-colors: transparent;
+	-moz-border-left-colors: transparent;
+	background: transparent;
+	direction: ltr !important;
+}
+
+#listbox listcell > textbox[focused="true"]
+{
+	color: -moz-FieldText;
+	-moz-border-top-colors: -moz-FieldText;
+	-moz-border-right-colors: -moz-FieldText;
+	-moz-border-bottom-colors: -moz-FieldText;
+	-moz-border-left-colors: -moz-FieldText;
+	background: -moz-Field;
+}
+
+#listbox listcell > checkbox > .checkbox-label-box
+{
+	display: none;
+}

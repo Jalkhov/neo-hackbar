@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "NoRedirect — Настройки">
+<!ENTITY noredirect.settings.list "Список правил">
+<!ENTITY noredirect.settings.pattern "Образец регулярного выражения">
+<!ENTITY noredirect.settings.source "Источник">
+<!ENTITY noredirect.settings.allow "Разрешить">
+<!ENTITY noredirect.settings.error "Ошибка DNS">
+<!ENTITY noredirect.settings.up.label "Выше">
+<!ENTITY noredirect.settings.up.accesskey "В">
+<!ENTITY noredirect.settings.down.label "Ниже">
+<!ENTITY noredirect.settings.down.accesskey "Н">
+<!ENTITY noredirect.settings.add.label "Добавить">
+<!ENTITY noredirect.settings.add.accesskey "б">
+<!ENTITY noredirect.settings.remove.label "Удалить">
+<!ENTITY noredirect.settings.remove.accesskey "д">
+<!ENTITY noredirect.settings.help "Справка">
+<!ENTITY noredirect.settings.help.pattern "шаблон регулярного выражения совпадающий с адресом источника или назначения">
+<!ENTITY noredirect.settings.help.source "должен ли шаблон соответствовать адресу источника (флажок установлен) или адресу назначения (флажок снят)">
+<!ENTITY noredirect.settings.help.allow "должно ли быть разрешено (флажок установлен) или заблокировано (флажок снят) это перенаправление">
+<!ENTITY noredirect.settings.help.error "должен ли браузер отображать ошибку DNS при запрете перенаправления">

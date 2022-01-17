@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<overlay id="noredirectOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script src="chrome://noredirect/content/noredirect.js" type="application/x-javascript" />
+
+	<commandset id="mainCommandSet">
+		<command id="cmd_noredirect"
+		         oncommand="openDialog('chrome://noredirect/content/noredirect.settings.xul', '', 'chrome,titlebar,toolbar,centerscreen');" />
+	</commandset>
+
+	<menupopup id="menu_ToolsPopup">
+		<menuitem class="menuitem-iconic"
+              image="chrome://noredirect/content/icon.png"
+              label="NoRedirect"
+              insertafter="devToolsSeparator"
+              command="cmd_noredirect"
+              accesskey="R"/>
+	</menupopup>
+  <!--
+	<menupopup id="taskPopup">
+		<menuitem command="cmd_noredirect"
+              class="menuitem-iconic"
+              image="chrome://noredirect/content/skin/nored.png"
+		          label="NoRedirect"
+		          accesskey="R"
+		          insertafter="navBeginGlobalItems" />
+	</menupopup>
+
+
+	<menupopup id="appmenu_customizeMenu">
+		<menuitem command="cmd_noredirect"
+              class="menuitem-iconic"
+              image="chrome://noredirect/content/skin/nored.png"
+		          label="NoRedirect"
+		          insertafter="appmenu_preferences" />
+	</menupopup>
+  -->
+
+</overlay>

@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "NoRedirect Settings">
+<!ENTITY noredirect.settings.list "Rule List">
+<!ENTITY noredirect.settings.pattern "RegExp Pattern">
+<!ENTITY noredirect.settings.source "Source">
+<!ENTITY noredirect.settings.allow "Allow">
+<!ENTITY noredirect.settings.error "DNS Error">
+<!ENTITY noredirect.settings.up.label "Move Up">
+<!ENTITY noredirect.settings.up.accesskey "U">
+<!ENTITY noredirect.settings.down.label "Move Down">
+<!ENTITY noredirect.settings.down.accesskey "D">
+<!ENTITY noredirect.settings.add.label "Add">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "Remove">
+<!ENTITY noredirect.settings.remove.accesskey "R">
+<!ENTITY noredirect.settings.help "Help">
+<!ENTITY noredirect.settings.help.pattern "a regular expression pattern (PCRE) to match the source or destination URL">
+<!ENTITY noredirect.settings.help.source "whether the pattern should match the source (checked) or destination (unchecked) URL">
+<!ENTITY noredirect.settings.help.allow "whether this is a redirect that should be allowed (checked) or blocked (unchecked)">
+<!ENTITY noredirect.settings.help.error "whether the browser should display a DNS error upon interdicting the redirect">

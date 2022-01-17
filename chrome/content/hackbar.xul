@@ -39,9 +39,10 @@
 
   <toolbarpalette id="BrowserToolbarPalette">
     <toolbarbutton id="hackBarToolbarButton"
-      class="toolbarbutton-1 chromeclass-toolbar-additional"
-      oncommand="hackBar.toggleBar()"
-      label="HackBar" tooltip="hackbar-tooltip">
+                   class="toolbarbutton-1 chromeclass-toolbar-additional"
+                   oncommand="hackBar.toggleBar()"
+                   label="HackBar"
+                   tooltip="hackbar-tooltip">
       <menupopup id="blank" />
     </toolbarbutton>
   </toolbarpalette>

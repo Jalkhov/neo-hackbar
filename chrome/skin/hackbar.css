@@ -1,11 +1,24 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+#hackBarToolbarButton {
+    list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+}
+#hackBarToolbarButton:hover
+{
+}
+
+[iconsize="small"] #hackBarToolbarButton
+{
+  list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+}
+
+[iconsize="small"] #hackBarToolbarButton:hover
+{
+}
 
 menu#firstMenuItem {
     margin-left: 88px;
 }
 
 /* Fixed bug https://bugzilla.mozilla.org/show_bug.cgi?id=1037303 */
-
 toolbar#hackBarToolbar {
     max-height: 1000px !important;
 }
@@ -21,18 +34,6 @@ toolbarbutton#hackBarCopyButton {
 toolbarbutton#hackBarSplitButton {
     list-style-image: url("chrome://hackbar/skin/split.gif");
 }
-
-/* Button */
-
-#hackBarToolbarButton {
-    list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
-}
-
-toolbar[iconsize="small"] #hackBarToolbarButton {
-  list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
-}
-
-/* t.PRO & Sweetyow MOD's */
 
 #enc {
     padding-left: 5px;

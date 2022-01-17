@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "Predisposiciones de NoRedirect">
+<!ENTITY noredirect.settings.list "Lista de reglas">
+<!ENTITY noredirect.settings.pattern "Patrón de ExpReg">
+<!ENTITY noredirect.settings.source "Origen">
+<!ENTITY noredirect.settings.allow "Permitir">
+<!ENTITY noredirect.settings.error "Error DNS">
+<!ENTITY noredirect.settings.up.label "Subir">
+<!ENTITY noredirect.settings.up.accesskey "S">
+<!ENTITY noredirect.settings.down.label "Bajar">
+<!ENTITY noredirect.settings.down.accesskey "B">
+<!ENTITY noredirect.settings.add.label "Añadir">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "Eliminar">
+<!ENTITY noredirect.settings.remove.accesskey "E">
+<!ENTITY noredirect.settings.help "Ayuda">
+<!ENTITY noredirect.settings.help.pattern "un patrón de expresiones regulares (PCRE) que coincida con la URL original o de destino">
+<!ENTITY noredirect.settings.help.source "si el patrón debe coincidir con la URL de origen (seleccionado) o de destino (no seleccionado).">
+<!ENTITY noredirect.settings.help.allow "si este redireccionamiento debe ser permitido (seleccionado) o bloqueado (no seleccionado).">
+<!ENTITY noredirect.settings.help.error "si el navegador debe mostrar un error DNS tras bloquear el redireccionamiento">

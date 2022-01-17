@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "NoRedirect - Nastavení">
+<!ENTITY noredirect.settings.list "Seznam pravidel">
+<!ENTITY noredirect.settings.pattern "Regulární výrazy">
+<!ENTITY noredirect.settings.source "Zdroj">
+<!ENTITY noredirect.settings.allow "Povolit">
+<!ENTITY noredirect.settings.error "Chyba DND serveru">
+<!ENTITY noredirect.settings.up.label "Posunout výš">
+<!ENTITY noredirect.settings.up.accesskey "u">
+<!ENTITY noredirect.settings.down.label "Posunout níž">
+<!ENTITY noredirect.settings.down.accesskey "n">
+<!ENTITY noredirect.settings.add.label "Přidat">
+<!ENTITY noredirect.settings.add.accesskey "a">
+<!ENTITY noredirect.settings.remove.label "Odstranit">
+<!ENTITY noredirect.settings.remove.accesskey "r">
+<!ENTITY noredirect.settings.help "Nápověda">
+<!ENTITY noredirect.settings.help.pattern "vzorec regulárních výrazů (PCRE) souhlasící se zdrojovou nebo cílovou adresou URL">
+<!ENTITY noredirect.settings.help.source "jestli má vzorec souhlasit se zdrojovou (zaškrtnuto) nebo cílovou (odškrtnuto) adresou URL">
+<!ENTITY noredirect.settings.help.allow "jestli jde o přesměrování, které by mělo být dovoleno (zaškrtnuto) nebo zablokováno (odškrtnuto)jestli">
+<!ENTITY noredirect.settings.help.error "jestli má prohlížeč zobrazit chybu DNS serveru před zastavením přesměrování">

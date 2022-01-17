@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "Inställningar för NoRedirect">
+<!ENTITY noredirect.settings.list "Regellista">
+<!ENTITY noredirect.settings.pattern "RegExp-mönster">
+<!ENTITY noredirect.settings.source "Källa">
+<!ENTITY noredirect.settings.allow "Tillåt">
+<!ENTITY noredirect.settings.error "DNS-fel">
+<!ENTITY noredirect.settings.up.label "Flytta uppåt">
+<!ENTITY noredirect.settings.up.accesskey "u">
+<!ENTITY noredirect.settings.down.label "Flytta nedåt">
+<!ENTITY noredirect.settings.down.accesskey "d">
+<!ENTITY noredirect.settings.add.label "Lägg till">
+<!ENTITY noredirect.settings.add.accesskey "L">
+<!ENTITY noredirect.settings.remove.label "Ta bort">
+<!ENTITY noredirect.settings.remove.accesskey "b">
+<!ENTITY noredirect.settings.help "Hjälp">
+<!ENTITY noredirect.settings.help.pattern " Ett reguljärt uttryck-mönster (PCRE) som skall matcha käll- eller mål-URL:en">
+<!ENTITY noredirect.settings.help.source " Bestämmer om mönstret skall matcha käll- (markerat) eller mål-URL:en (avmarkerat)">
+<!ENTITY noredirect.settings.help.allow " Bestämmer om detta är en omdirigering som skall tillåtas (markerat) eller blockeras (avmarkerat)">
+<!ENTITY noredirect.settings.help.error " Bestämmer om webbläsaren skall visa ett DNS-fel när omdirigeringen förbjuds">

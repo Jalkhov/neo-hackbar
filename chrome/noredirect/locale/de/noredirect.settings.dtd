@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "NoRedirect - Einstellungen">
+<!ENTITY noredirect.settings.list "Regelliste">
+<!ENTITY noredirect.settings.pattern "Reguläre Ausdrucksmuster">
+<!ENTITY noredirect.settings.source "Quelltext">
+<!ENTITY noredirect.settings.allow "Erlauben">
+<!ENTITY noredirect.settings.error "DNS-Fehler">
+<!ENTITY noredirect.settings.up.label "Nach oben">
+<!ENTITY noredirect.settings.up.accesskey "o">
+<!ENTITY noredirect.settings.down.label "Nach unten">
+<!ENTITY noredirect.settings.down.accesskey "u">
+<!ENTITY noredirect.settings.add.label "Hinzufügen">
+<!ENTITY noredirect.settings.add.accesskey "H">
+<!ENTITY noredirect.settings.remove.label "Entfernen">
+<!ENTITY noredirect.settings.remove.accesskey "E">
+<!ENTITY noredirect.settings.help "Hilfe">
+<!ENTITY noredirect.settings.help.pattern "Mit regulären Ausdrucksmustern, sog. &quot;regular expression pattern&quot; (PCRE), Übereinstimmungen zum Quelltext oder zur Ziel-Adresse finden">
+<!ENTITY noredirect.settings.help.source "Übereinstimmungen zum Quelltext (aktiviert) oder zur Ziel-Adresse (deaktiviert) finden">
+<!ENTITY noredirect.settings.help.allow "Weiterleitungen zulassen (aktiviert) oder blocken (deaktiviert)">
+<!ENTITY noredirect.settings.help.error "Entscheiden, ob der Browser DNS-Fehlerseiten zu untersagten Weiterleitungen anzeigen soll">

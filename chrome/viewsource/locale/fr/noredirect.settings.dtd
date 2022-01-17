@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "Paramètres de l'extension NoRedirect">
+<!ENTITY noredirect.settings.list "Liste des règles">
+<!ENTITY noredirect.settings.pattern "Masque">
+<!ENTITY noredirect.settings.source "Source">
+<!ENTITY noredirect.settings.allow "Autoriser">
+<!ENTITY noredirect.settings.error "Erreur DNS">
+<!ENTITY noredirect.settings.up.label "Monter">
+<!ENTITY noredirect.settings.up.accesskey "M">
+<!ENTITY noredirect.settings.down.label "Descendre">
+<!ENTITY noredirect.settings.down.accesskey "D">
+<!ENTITY noredirect.settings.add.label "Ajouter">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "Supprimer">
+<!ENTITY noredirect.settings.remove.accesskey "S">
+<!ENTITY noredirect.settings.help "Aide">
+<!ENTITY noredirect.settings.help.pattern "un masque d'expression rationnelle pour correspondre à l'URL source ou de destination">
+<!ENTITY noredirect.settings.help.source "correspondre à l'URL source?">
+<!ENTITY noredirect.settings.help.allow "autoriser la redirection?">
+<!ENTITY noredirect.settings.help.error "afficher une erreur DNS?">

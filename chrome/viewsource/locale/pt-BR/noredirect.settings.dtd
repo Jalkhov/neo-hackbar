@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "Configurações do NoRedirect">
+<!ENTITY noredirect.settings.list "Lista de Regras">
+<!ENTITY noredirect.settings.pattern "Expressão Regular">
+<!ENTITY noredirect.settings.source "Origem">
+<!ENTITY noredirect.settings.allow "Permitir">
+<!ENTITY noredirect.settings.error "Erro de DNS">
+<!ENTITY noredirect.settings.up.label "Mover para Cima">
+<!ENTITY noredirect.settings.up.accesskey "C">
+<!ENTITY noredirect.settings.down.label "Mover para Baixo">
+<!ENTITY noredirect.settings.down.accesskey "B">
+<!ENTITY noredirect.settings.add.label "Adicionar">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "Remover">
+<!ENTITY noredirect.settings.remove.accesskey "R">
+<!ENTITY noredirect.settings.help "Ajuda">
+<!ENTITY noredirect.settings.help.pattern "uma expressão regular que coincida com a URL de origem ou de destino">
+<!ENTITY noredirect.settings.help.source "se o padrão deve coincidir com a URL de origem (marcado) ou destino (desmarcado)">
+<!ENTITY noredirect.settings.help.allow "se este é um redirecionamento que deve ser permitido (marcado) ou bloqueado (desmarcado)">
+<!ENTITY noredirect.settings.help.error "se o navegador deve mostrar um erro de DNS ao interditar o redirecionamento">

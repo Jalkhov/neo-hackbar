@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://livehttpheaders/skin/livehttpheaders.css"?>
+<!--
+  **** BEGIN LICENSE BLOCK ****
+  Copyright(c) 2002-2003 Daniel Savard.
+
+  LiveHTTPHeaders: this programs have two purpose
+  - Add a tab in PageInfo to show http headers sent and received
+  - Add a tool that display http headers in real time while loading pages
+
+  This program is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This program is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+  more details.
+
+  You should have received a copy of the GNU General Public License along with
+  this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+  Place, Suite 330, Boston, MA 02111-1307 USA
+  **** END LICENSE BLOCK ****
+-->
+
+<!DOCTYPE overlay SYSTEM "chrome://livehttpheaders/locale/livehttpheaders.dtd">
+<overlay id="headerinfoTasksOverlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:nc="http://home.netscape.com/NC-rdf#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <html:script>
+    <![CDATA[
+      if(!livehttpheaders) var livehttpheaders={};
+      if(!livehttpheaders.task) livehttpheaders.task={};
+
+      livehttpheaders.task.openLiveHTTPHeaders = function() {
+        var getBoolPref = function (name, value) {
+          try {
+            var pref = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+            pref = pref.getBranch("extensions.livehttpheaders.");
+            if (pref.prefHasUserValue(name)) {
+              value = pref.getBoolPref(name);
+            } else {
+              pref.setBoolPref(name, value);
+            }
+          } catch (ex) { alert(ex); }
+          return value;
+        }
+        var usetab = getBoolPref("tab", false);
+        if (usetab) {
+          // Open LiveHTTPHeaders in a new tab
+          gBrowser.selectedTab = gBrowser.addTab('chrome://livehttpheaders/content/LiveHTTPHeaders.xul');
+          setTimeout("gURLBar.focus();", 0);
+          gBrowser.selectedTab.setAttribute("image", "chrome://livehttpheaders/skin/favicon.ico");
+          var title = document.getElementById("livehttpheaders_title").label
+          gBrowser.selectedTab.setAttribute("label", title);
+        } else {
+          // Open LiveHTTPHeaders in a global window
+          toOpenWindowByType('global:LiveHTTPHeaders',
+                   'chrome://livehttpheaders/content/LiveHTTPHeaders.xul');
+        }
+      }
+    ]]>
+  </html:script>
+
+  <!-- Mozilla XUL -->
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="livehttpheaders-toolbar-button"
+                   label="&livehttpheaders.live.title;"
+                   tooltiptext="&livehttpheaders.live.title;"
+                   oncommand="livehttpheaders.task.openLiveHTTPHeaders();"
+                   class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+  </toolbarpalette>
+
+  <!-- Phoenix XUL -->
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="livehttpheaders_title"
+              class="menuitem-iconic"
+              image="chrome://livehttpheaders/skin/img/Logo_16.png"
+              insertafter="devToolsSeparator"
+              label="&livehttpheaders.live.title;"
+              oncommand="livehttpheaders.task.openLiveHTTPHeaders();" />
+  </menupopup>
+
+  <!-- Seamonkey XUL -->
+  <menupopup id="taskPopup">
+    <menuitem id="livehttpheaders_title"
+              label="&livehttpheaders.live.title;"
+              oncommand="livehttpheaders.task.openLiveHTTPHeaders();" />
+  </menupopup>
+
+  <!-- Phoenix Sidebar -->
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewLiveHTTPSidebar"
+                 autoCheck="false"
+                 label="LiveHTTPHeaders"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://livehttpheaders/content/LiveHTTPSideBar.xul"
+                 oncommand="toggleSidebar('viewLiveHTTPSidebar');"/>
+  </broadcasterset>
+
+  <keyset id="mainKeyset">
+    <key id="key_viewLiveHTTPSidebar"
+         key="&livehttpheaders.browser.sidebarkey;"
+         command="viewLiveHTTPSidebar"
+         modifiers="accel shift"/>
+  </keyset>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_viewLiveHTTPSidebar" observes="viewLiveHTTPSidebar"/>
+  </menupopup>
+</overlay>

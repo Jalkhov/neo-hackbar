@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://viewsource/skin/viewsource.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://viewsource/locale/viewsource.dtd" [
+	<!-- The constants defined here should not be localized. -->
+	<!ENTITY vs.licence_url "http://www.gnu.org/licenses/gpl.txt">
+	<!ENTITY vs.mailadress "kasper@kaspervdheijden.nl">
+	<!ENTITY vs.translator "Fiona van der Heijden">
+	<!ENTITY vs.creator "Kasper van der Heijden">
+	
+	<!-- Update this whenever there is an update! -->
+	<!ENTITY vs.version "2.4">
+]>
+
+<dialog id="vs-about-dialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&vs.about;" buttons="accept">
+	<dialogheader id="vs-about-title" title="&vs.vs; &vs.version;"/>
+	<vbox id="vs-about-group">
+		<description>&vs.description;</description>
+		<vbox>
+			<description value="&vs.author;:"/>
+			<box><label value="&vs.creator;"/></box>
+		</vbox>
+		<vbox>
+			<description value="&vs.email;:"/>
+			<box><label class="text-link vs-text-link" href="mailto:&vs.mailadress;" onclick="return !(location.href=this.href);" value="&vs.mailadress;"/></box>
+		</vbox>
+		<vbox>
+			<description value="&vs.translators;:"/>
+			<box><label value="&vs.translator; (&vs.lang.fr;, &vs.lang.de;)"/></box>
+		</vbox>
+		<box><label class="text-link vs-text-link" href="&vs.licence_url;" value="&vs.license;"/></box>
+	</vbox>
+</dialog>

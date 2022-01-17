@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "NoRedirect 設定">
+<!ENTITY noredirect.settings.list "規則一覧">
+<!ENTITY noredirect.settings.pattern "正規表現パターン">
+<!ENTITY noredirect.settings.source "転送元">
+<!ENTITY noredirect.settings.allow "許可">
+<!ENTITY noredirect.settings.error "DNS エラー">
+<!ENTITY noredirect.settings.up.label "上へ移動">
+<!ENTITY noredirect.settings.up.accesskey "U">
+<!ENTITY noredirect.settings.down.label "下へ移動">
+<!ENTITY noredirect.settings.down.accesskey "D">
+<!ENTITY noredirect.settings.add.label "追加">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "除去">
+<!ENTITY noredirect.settings.remove.accesskey "R">
+<!ENTITY noredirect.settings.help "ヘルプ">
+<!ENTITY noredirect.settings.help.pattern "転送元または転送先 URL にマッチする正規表現パターン(PCRE)">
+<!ENTITY noredirect.settings.help.source "パターンがマッチすべき URL は転送元(チェック済)か転送先(未チェック)か">
+<!ENTITY noredirect.settings.help.allow "このリダイレクトは許可されるべき(チェック済)か阻止されるべき(未チェック)か">
+<!ENTITY noredirect.settings.help.error "リダイレクト阻止の際にブラウザーが DNS エラーを表示すべきかどうか">

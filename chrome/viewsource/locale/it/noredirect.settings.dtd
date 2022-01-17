@@ -1,0 +1,19 @@
+<!ENTITY noredirect.settings.title "Opzioni di NoRedirect">
+<!ENTITY noredirect.settings.list "Espressioni regolari">
+<!ENTITY noredirect.settings.pattern "Modello di espressione regolare">
+<!ENTITY noredirect.settings.source "Origine">
+<!ENTITY noredirect.settings.allow "Permesso">
+<!ENTITY noredirect.settings.error "Errore DNS">
+<!ENTITY noredirect.settings.up.label "Sposta su">
+<!ENTITY noredirect.settings.up.accesskey "S">
+<!ENTITY noredirect.settings.down.label "Sposta giù">
+<!ENTITY noredirect.settings.down.accesskey "g">
+<!ENTITY noredirect.settings.add.label "Aggiungi">
+<!ENTITY noredirect.settings.add.accesskey "A">
+<!ENTITY noredirect.settings.remove.label "Elimina">
+<!ENTITY noredirect.settings.remove.accesskey "E">
+<!ENTITY noredirect.settings.help "Contenuti guida">
+<!ENTITY noredirect.settings.help.pattern "il modello può corrispondere sia all&apos;URL di origine che a quello di destinazione">
+<!ENTITY noredirect.settings.help.source "il modello corrisponde all&apos;URL di origine (con segno di spunta) o di destinazione (senza segno di spunta)">
+<!ENTITY noredirect.settings.help.allow "il modello permette un reindirizzamento (con segno di spunta) oppure lo blocca (senza segno di spunta)">
+<!ENTITY noredirect.settings.help.error "il modello fa visualizzare al browser un avviso di errore DNS quando un reindirizzamento viene bloccato">

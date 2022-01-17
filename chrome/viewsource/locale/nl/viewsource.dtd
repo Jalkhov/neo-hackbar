@@ -1,0 +1,33 @@
+<!ENTITY vs.description "Geeft alle bronbestanden van een pagina weer.">
+<!ENTITY vs.author "Auteur">
+<!ENTITY vs.openintabfocus "In nieuw tabblad openen">
+<!ENTITY vs.openintabblur "In nieuw tabblad openen (achtergrond)">
+<!ENTITY vs.openinwindow "In nieuw venster openen">
+<!ENTITY vs.copyurl "De URL naar het klembord kopi&#xEB;ren">
+<!ENTITY vs.selecturl "-- Selecteer een URL --">
+<!ENTITY vs.close "Zijbalk sluiten">
+<!ENTITY vs.refresh "Vernieuwen">
+<!ENTITY vs.selectall "Alles selecteren">
+<!ENTITY vs.copy "Kopi&#xEB;ren naar het klembord">
+<!ENTITY vs.name "Naam">
+<!ENTITY vs.value "Waarde">
+<!ENTITY vs.license "Licentie">
+<!ENTITY vs.open "Openen">
+<!ENTITY vs.about "Over: View Source">
+<!ENTITY vs.defaultaction "Standaard aktie...">
+<!ENTITY vs.images "Afbeeldingen">
+<!ENTITY vs.links "Koppelingen">
+<!ENTITY vs.responseheaders "Response headers">
+<!ENTITY vs.vs "View Source">
+<!ENTITY vs.linksource "Bron">
+<!ENTITY vs.sidebar "View Source Zijbalk">
+<!ENTITY vs.sidebar.accesskey "Z">
+<!ENTITY vs.metadata "Meta gegevens">
+<!ENTITY vs.colors "Kleuren">
+<!ENTITY vs.color "Kleur">
+<!ENTITY vs.colorcsstype "CSS eigenschap">
+<!ENTITY vs.resizertooltip "De View Source zijbalk openen/sluiten">
+<!ENTITY vs.translators "Vertalers">
+<!ENTITY vs.lang.fr "Frans">
+<!ENTITY vs.lang.de "Duits">
+<!ENTITY vs.email "E-mail">
