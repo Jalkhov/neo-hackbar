@@ -2,7 +2,7 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>neohackbar@Jalkhov</em:id>
-    <em:iconURL>chrome://hackbar/skin/icon.png</em:iconURL>
+    <em:iconURL>chrome://hackbar/skin/addon-icon/icon-64.png</em:iconURL>
     <em:version>1.0.0</em:version>
     <em:type>2</em:type>
     <em:name>Neo Hackbar</em:name>

@@ -77,7 +77,12 @@
   </html:script>
 
   <menupopup id="menu_ToolsPopup">
-    <menuitem label="&tamperdata.taskmenu.item;"  oncommand="openTamper();" />
+    <!--<menuitem label="&tamperdata.taskmenu.item;"  oncommand="openTamper();" />-->
+    <menuitem class="menuitem-iconic"
+              image="chrome://tamperdata/content/icon.png"
+              label="&tamperdata.taskmenu.item;"
+              insertafter="devToolsSeparator"
+              oncommand="openTamper();"/>
   </menupopup>
 </overlay>
 

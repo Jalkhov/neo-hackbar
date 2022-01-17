@@ -1,5 +1,5 @@
 #hackBarToolbarButton {
-    list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+    list-style-image: url("chrome://hackbar/skin/addon-icon/icon-24.png");
 }
 #hackBarToolbarButton:hover
 {
@@ -7,7 +7,7 @@
 
 [iconsize="small"] #hackBarToolbarButton
 {
-  list-style-image: url("chrome://hackbar/skin/toolbar_button.png");
+  list-style-image: url("chrome://hackbar/skin/addon-icon/icon-16.png");
 }
 
 [iconsize="small"] #hackBarToolbarButton:hover

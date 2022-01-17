@@ -33,7 +33,7 @@
 
   <popupset>
     <tooltip id="hackbar-tooltip">
-      <label class="hackbar-tooltip-version" value="Hackbar 3.0" />
+      <label class="hackbar-tooltip-version" value="Neo Hackbar" />
     </tooltip>
   </popupset>
 
@@ -62,7 +62,7 @@
     <key key="x" modifiers="alt" oncommand="hackBar.Execute()" />
   </keyset>
   <menupopup id="menu_ToolsPopup">
-    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/toolbar_button.png" label="Show/hide hackbar" key="key_toggleHackBar" insertafter="devToolsSeparator" oncommand="hackBar.toggleBar()" />
+    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/addon-icon/icon-16.png" label="Show/hide hackbar" key="key_toggleHackBar" insertafter="devToolsSeparator" oncommand="hackBar.toggleBar()" />
   </menupopup>
   <toolbox id="navigator-toolbox">
     <toolbar id="hackBarToolbar" toolbarname="Hackbar" class="chromeclass-toolbar" context="toolbar-context-menu" hidden="false" persist="hidden">
