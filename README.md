@@ -1,6 +1,6 @@
 # Neo Hackbar
 
-Esta versión de la Hackbar corrige muchos errores respecto a algunas variantes existentes en la web, tiene una interfaz mejorada pero no exagerada y trae incluidas algunas de las mejores extensiones para pentesting, entre ellas:
+This version of the Hackbar fixes many bugs with respect to some existing variants on the web, has an improved but not overdone interface and comes with some of the best extensions for pentesting, among them:
 
 * [Live Http Headers](http://livehttpheaders.mozdev.org/) **v0.17.1** | by Daniel Savard, Nikolas Co  (Oficial site Dead)
 
@@ -20,8 +20,8 @@ Esta versión de la Hackbar corrige muchos errores respecto a algunas variantes 
 
   Search in some of the ways hackers would to gather google indexed data about your website so that you can secure it yourself.
 
-Esta Hackbar goza de las modificaciones realizadas por t.pro y Renegade18
+This Hackbar benefits from the modifications made by t.pro and Renegade18
 
-Desarrolladores Originales de la Hackbar: Johan Adriaans y Pedro Laguna.
+Original Hackbar Developers: Johan Adriaans and Pedro Laguna.
 
-Iconos cortesia de Fatcow https://www.fatcow.com/free-icons
+Icons courtesy of Fatcow https://www.fatcow.com/free-icons
