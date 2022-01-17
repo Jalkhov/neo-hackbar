@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://hackbar/skin/hackbar.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://hackbar/locale/hackbar.dtd">
-<!--
-<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="hackBarOverlay">
--->
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="hackBarOverlay" xmlns:html="http://www.w3.org/1999/xhtml" onload="HackBar.init()">
   <script type="application/x-javascript" src="chrome://hackbar/content/namespace.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Encrypt.js" />
@@ -24,12 +21,6 @@
     var hackBar = new HackBar.Main( window );
   ]]>
   </script>
-  <!--
-  <toolbarpalette id="BrowserToolbarPalette">
-    <toolbarbutton id="hackBarToolbarButton" />
-  </toolbarpalette>
-  <toolbarbutton id="hackBarToolbarButton" label="Toggle HackBar" tooltiptext="Show/Hide Hackbar" oncommand="hackBar.toggleBar()" class="hackBarToolbarButton chromeclass-toolbar-additional custombutton" />
-  -->
 
   <popupset>
     <tooltip id="hackbar-tooltip">
@@ -106,7 +97,7 @@
                     <menu type="menu" label="CONVERT USING latin">
                       <menupopup>
                         <menuitem label="CONVERT(concat(value)+USING+latin1)" oncommand="HackBar.SQL.statementsTpro('latin 1')" />
-                        <menuitem label="CONVERT(concat(value)+USING+latin2)" oncommand="HackBar.SQL.statementsTpro(2latin 2')" />
+                        <menuitem label="CONVERT(concat(value)+USING+latin2)" oncommand="HackBar.SQL.statementsTpro('2latin 2')" />
                         <menuitem label="CONVERT(concat(value)+USING+latin3)" oncommand="HackBar.SQL.statementsTpro('latin 3')" />
                         <menuitem label="CONVERT(concat(value)+USING+latin4)" oncommand="HackBar.SQL.statementsTpro('latin 2')" />
                         <menuitem label="CONVERT(concat(value)+USING+latin5)" oncommand="HackBar.SQL.statementsTpro('latin 5')" />
