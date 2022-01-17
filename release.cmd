@@ -22,7 +22,6 @@ zip -r9q ../viewsource.jar *
 cd ../..
 
 sed -i -E "s/version>.+?</version>%VER%</" install.rdf
-sed -i -E "s/version>.+?</version>%VER%</; s/download\/.+?\/neo-hackbar-.+?\.xpi/download\/%VER%\/neo-hackbar-%VER%\.xpi/" update.xml
 
 set XPI=neo-hackbar-%VER%.xpi
 if exist %XPI% del %XPI%
