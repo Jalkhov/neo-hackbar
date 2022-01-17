@@ -80,7 +80,7 @@ livehttpheaders.overlay.makeHeaderInfoTab = function() {
 
     responseheaders.addRow(["RESPONSE", headers.response]);
     for (i in headers.responseHeaders) {
-      // Server can send some headers multiple times...  
+      // Server can send some headers multiple times...
       // Try to detect this and present them in the 'good' way.
       var multi = headers.responseHeaders[i].split('\n');
       for (var o in multi) {
@@ -108,11 +108,11 @@ livehttpheaders.overlay.saveHeaderInfoTab = function(title) {
     for (i in headers.requestHeaders) {
       txt += i + ": " + headers.requestHeaders[i] + "\n";
     }
- 
+
     // Finaly, the response and its headers
     txt += "\n" + headers.response + "\n";
     for (i in headers.responseHeaders) {
-      // Server can send some headers multiple times...  
+      // Server can send some headers multiple times...
       // Try to detect this and present them in the 'good' way.
       var multi = headers.responseHeaders[i].split('\n');
       for (var o in multi) {
@@ -136,7 +136,7 @@ livehttpheaders.overlay.addhScrollToTreeView = function(tv) {
     tv.prototype.hScrollBar = null;
     tv.prototype.hScrollColumn = null;
     tv.prototype.hScrollHandler = function() {
-      // Need to use global livehttpheaders.live.oHeaderInfoLive object  
+      // Need to use global livehttpheaders.live.oHeaderInfoLive object
       // this because 'this' doesn't seem to be available.
       for (var id in tv.prototype.hScrollTree) {
         var base = tv.prototype.hScrollTree[id];
@@ -178,9 +178,9 @@ livehttpheaders.overlay.addhScrollToTreeView = function(tv) {
         if (length > max) max = length;
       }
       this.sethScroll(max); // Don't know why, but if I don't call this before
-                            // someone plays with the scrollbar, some 
+                            // someone plays with the scrollbar, some
                             // attributes of the scrollbar disapears
-        
+
       // Keep a global reference to the treeview object
       tv.prototype.hScrollTree[scrollbar] = this;
     }

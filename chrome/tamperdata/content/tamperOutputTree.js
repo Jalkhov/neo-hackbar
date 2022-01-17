@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -61,7 +61,7 @@ TamperOutputTree.prototype = {
       this.rowCountChanged(0, -oldCount);
       this.gui.hasData = (this.sourceData.requests.length > 0);
       this.filter(this.gui.currentFilter);
-   }, 
+   },
 
    start : function(tamper, gui) {
       this.gui = gui;
@@ -70,8 +70,8 @@ TamperOutputTree.prototype = {
       this.tree.view = this;
    },
 
-   set rowCount(c) { 
-      throw "rowCount is a readonly property"; 
+   set rowCount(c) {
+      throw "rowCount is a readonly property";
    },
 
    get rowCount() {
@@ -119,24 +119,24 @@ TamperOutputTree.prototype = {
       }
    },
 
-   setTree: function(treebox) { 
-      this.treebox = treebox; 
+   setTree: function(treebox) {
+      this.treebox = treebox;
    },
 
-   isContainer: function(row) { 
-      return false; 
+   isContainer: function(row) {
+      return false;
    },
-   isSeparator: function(row) { 
-      return false; 
+   isSeparator: function(row) {
+      return false;
    },
-   isSorted: function(row) { 
-      return false; 
+   isSorted: function(row) {
+      return false;
    },
-   getLevel: function(row) { 
-      return 0; 
+   getLevel: function(row) {
+      return 0;
    },
-   getImageSrc: function(row, col) { 
-      return null; 
+   getImageSrc: function(row, col) {
+      return null;
    },
    getRowProperties: function(row,props) {
    },
@@ -193,7 +193,7 @@ TamperOutputTree.prototype = {
          var rangeStart = new Object();
          var rangeEnd = new Object();
          var numRanges = this.tree.view.selection.getRangeCount();
-         
+
          for (var t = 0; t < numRanges; t++){
             this.tree.view.selection.getRangeAt(t , rangeStart, rangeEnd);
             for (var v = rangeStart.value; v <= rangeEnd.value; v++){
@@ -220,7 +220,7 @@ TamperOutputTree.prototype = {
          var rangeStart = {};
          var rangeEnd = {};
          var numRanges = this.tree.view.selection.getRangeCount();
-         
+
          for (var t = 0; t < numRanges; t++){
             this.tree.view.selection.getRangeAt(t , rangeStart, rangeEnd);
             for (var v = rangeStart.value; v <= rangeEnd.value; v++){

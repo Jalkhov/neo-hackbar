@@ -60,10 +60,10 @@ livehttpheaders.replay.updatePost = function() {
   var s = livehttpheaders.replay.escapeToString(post.value);
   cl.value = s.length;
   //post.value = livehttpheaders.replay.stringToEscape(s);
-  if (document.getElementById("livehttpheaders.replay.sendpost").checked) { 
+  if (document.getElementById("livehttpheaders.replay.sendpost").checked) {
     sendpost.removeAttribute('disabled');
     method.value="POST";
-  } else { 
+  } else {
     sendpost.setAttribute('disabled','true');
     method.value="GET";
   }
@@ -81,7 +81,7 @@ livehttpheaders.replay.hexToDec = function(s) {
                 'd':13, 'D':13, 'e':14, 'E':14, 'f':15, 'F':15}
 
   var out = 0;
-  for (var i=s.length-1, pow=1; i>=0; i--, pow*=16) { 
+  for (var i=s.length-1, pow=1; i>=0; i--, pow*=16) {
     out += conv[s.charAt(i)]*pow;
   }
   return out;
@@ -93,28 +93,28 @@ livehttpheaders.replay.decToHex = function(v,d) {
 }
 
 livehttpheaders.replay.stringToEscape = function(s) {
-  const conv = {'\x00':'\\0', '\x07':'\\a', '\x08':'\\b', '\x09':'\\t', 
-                '\x0a':'\\n\n', '\x0b':'\\v', '\x0c':'\\f', '\x0d':'\\r', 
+  const conv = {'\x00':'\\0', '\x07':'\\a', '\x08':'\\b', '\x09':'\\t',
+                '\x0a':'\\n\n', '\x0b':'\\v', '\x0c':'\\f', '\x0d':'\\r',
                 '\x5c':'\\\\'}
-  
+
   var out = s.replace(/([\x00\x07-\x0d\\])|([\x00-\x1f\x7f-\x9f])|([\u0100-\uffff])/g, function(s,a,b,c) {
-      if (a) { 
+      if (a) {
         return conv[a];
       } else if (b) {
         return "\\x"+livehttpheaders.replay.decToHex(b.charCodeAt(),2);
       } else {
         return "\\u"+livehttpheaders.replay.decToHex(c.charCodeAt(),4);
-      } 
+      }
     });
   return out;
 }
 livehttpheaders.replay.escapeToString = function(s) {
-  const conv = {'0':'\0', 'a':'\a', 'b':'\b', 't':'\t', 'n':'\n', 
+  const conv = {'0':'\0', 'a':'\a', 'b':'\b', 't':'\t', 'n':'\n',
                 'v':'\v', 'f':'\f', 'r':'\r', '\\':'\\'}
-  
+
   var out = s.replace(/\r|\n/g,"");
   out = out.replace(/\\x([0-9a-fA-F]{2})|\\u([0-9a-fA-F]{4})|\\(.)/g, function(s,a,b,c) {
-      if (a) { 
+      if (a) {
         return String.fromCharCode(livehttpheaders.replay.hexToDec(a));
       } else if (b) {
         return String.fromCharCode(livehttpheaders.replay.hexToDec(b));

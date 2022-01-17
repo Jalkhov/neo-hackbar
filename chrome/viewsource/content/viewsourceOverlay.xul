@@ -3,26 +3,26 @@
 <?xml-stylesheet href="chrome://viewsource/skin/viewsource.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://viewsource/locale/viewsource.dtd">
 
-<window id="vs-viewsource-overlay" 
+<window id="vs-viewsource-overlay"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	persist="width height screenX screenY"
 	windowtype="global:viewsource"
     xmlns:html="http://www.w3.org/1999/xhtml">
 
 	<script src="viewsourceOverlay.js"/>
-	
+
 	<!-- String bundle -->
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="vs-strings" src="chrome://viewsource/locale/viewsource.properties"/>
 	</stringbundleset>
-	
+
 	<!-- Commands -->
 	<commandset id="mainCommandSet">
 		<command id="vs-cmd-sidebar" oncommand="gViewSourceExtensionObject.onSidebarCmd();"/>
 		<command id="vs-cmd-refresh" oncommand="gViewSourceExtensionObject.onRefreshCmd();"/>
 		<command id="vs-cmd-copy" oncommand="gViewSourceExtensionObject.onCopyCmd();"/>
 	</commandset>
-	
+
 	<!-- Context menus for popups and sidebar trees -->
 	<popupset id="mainPopupSet">
 		<menupopup id="popupMenuContext" oncommand="gViewSourceExtensionObject.doContextOpen(event);">
@@ -32,25 +32,25 @@
 			<menuseparator/>
 			<menuitem class="menuitem-iconic vs-copy" label="&vs.copyurl;" value="3"/>
 		</menupopup>
-		
+
 		<menupopup id="popupTreeContext" onpopupshowing="gViewSourceExtensionObject.onTreeContextOpening(event);">
 			<menuitem label="&vs.open;" oncommand="gViewSourceExtensionObject.onTreeContextOpen(event);" default="true"/>
 			<menuseparator/>
 			<menuitem label="&vs.linksource;" oncommand="gViewSourceExtensionObject.onTreeContextViewSource(event);"/>
 			<menuitem label="&vs.responseheaders;" oncommand="gViewSourceExtensionObject.onTreeContextHeaders(event);"/>
-			
+
 			<menuseparator/>
 			<menuitem id="vs-select-all" label="&vs.selectall;" oncommand="gViewSourceExtensionObject.onTreeSelectAll(event);"/>
 			<menuseparator/>
-			
+
 			<menuitem command="vs-cmd-copy" class="menuitem-iconic vs-copy" label="&vs.copy;"/>
 			<menuitem command="vs-cmd-refresh" class="menuitem-iconic vs-refresh" label="&vs.refresh;"/>
 			<menuseparator/>
 			<menuitem command="vs-cmd-sidebar" class="menuitem-iconic vs-close" label="&vs.close;"/>
 		</menupopup>
 	</popupset>
-	
-	
+
+
 	<!-- Menu stuff -->
 	<menupopup id="menu_viewPopup">
 		<!-- View menu for Firefox -->
@@ -60,7 +60,7 @@
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</menu>
 	</menupopup>
-	
+
 	<menupopup id="menu_View_Popup">
 		<!-- View menu for Seamonkey -->
 		<menuseparator/>
@@ -69,7 +69,7 @@
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</menu>
 	</menupopup>
-	
+
 	<!-- Firefox 4 Application developer menu -->
 	<menupopup id="appmenu_webDeveloper_popup">
 		<menuseparator/>
@@ -78,14 +78,14 @@
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</menu>
 	</menupopup>
-	
+
 	<!-- Context menu -->
 	<popup id="contentAreaContextMenu">
 		<menu class="menu-iconic vs-app-icon" label="&vs.vs;">
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</menu>
 	</popup>
-	
+
 	<!-- Custom sidebar -->
 	<hbox id="browser">
 		<vbox position="1" id="vs-sidebar-box" width="500" class="chromeclass-extrachrome" persist="width">
@@ -117,7 +117,7 @@
 				<toolbarbutton command="vs-cmd-copy" class="vs-copy" tooltiptext="&vs.copy;"/>
 		       	<toolbarbutton command="vs-cmd-sidebar" class="vs-close" tooltiptext="&vs.close;"/>
 			</sidebarheader>
-			
+
 			<deck flex="1" id="vs-sidebar-deck" onselect="gViewSourceExtensionObject.onSelect(event);">
 				<vbox flex="1">
 					<hbox class="vs-toolbar">
@@ -127,14 +127,14 @@
 							</menupopup>
 						</menulist>
 					</hbox>
-					
+
 					<tree flex="1" hidecolumnpicker="true" seltype="multiple" disabled="true">
 						<treecols>
 							<treecol flex="1" label="&vs.name;"/>
 							<splitter class="tree-splitter"/>
 							<treecol flex="1" label="&vs.value;"/>
 						</treecols>
-						
+
 						<!--
 							The docs specify that the attribute for a drop action would be 'ondragdrop'. This doesn't seem to work in FF4, but
 							'ondrop' does. So i'll include both, to remain back-compatible. Javascript is used to remove the other attribute.
@@ -146,21 +146,21 @@
 							ondragenter="gViewSourceExtensionObject.onDragEnter(event);"/>
 					</tree>
 				</vbox>
-				
+
 				<vbox flex="1">
 					<tree flex="1" hidecolumnpicker="true" seltype="single" onkeypress="gViewSourceExtensionObject.onTreeDefault(this, event);">
 						<treecols><treecol flex="1" label="&vs.links;"/></treecols>
 						<treechildren contextmenu="popupTreeContext" id="vs-links-content" ondblclick="gViewSourceExtensionObject.onTreeDefault(this.parentNode, event);"/>
 					</tree>
 				</vbox>
-				
+
 				<vbox flex="1">
 					<tree flex="1" hidecolumnpicker="true" seltype="single" onkeypress="gViewSourceExtensionObject.onTreeDefault(this, event);">
 						<treecols><treecol flex="1" label="&vs.images;"/></treecols>
 						<treechildren contextmenu="popupTreeContext" id="vs-images-content" ondblclick="gViewSourceExtensionObject.onTreeDefault(this.parentNode, event);"/>
 					</tree>
 				</vbox>
-				
+
 				<vbox flex="1">
 					<tree flex="1" hidecolumnpicker="true" seltype="multiple" disabled="true">
 						<treecols>
@@ -171,7 +171,7 @@
 						<treechildren contextmenu="popupTreeContext" id="vs-meta-content"/>
 					</tree>
 				</vbox>
-				
+
 				<vbox flex="1">
 					<listbox flex="1" id="vs-list-colors" disabled="true" contextmenu="popupTreeContext" seltype="single">
 						<listhead>
@@ -188,12 +188,12 @@
 				</vbox>
 			</deck>
 		</vbox>
-		
+
 		<splitter position="2" id="vs-sidebar-resizer" tooltiptext="&vs.resizertooltip;" resizebefore="closest" resizeafter="farthest" oncommand="gViewSourceExtensionObject.updateSideBar();" collapse="before" state="collapsed">
 			<grippy/>
 		</splitter>
 	</hbox>
-	
+
 	<!-- Statusbar icon -->
 	<statusbar id="status-bar">
 		<!-- This element needs to be hidden for Firefox 4. We do that by using CSS. -->
@@ -201,7 +201,7 @@
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</statusbarpanel>
 	</statusbar>
-	
+
 	<!-- Browser toolbar palette -->
 	<toolbarpalette id="BrowserToolbarPalette">
 		<!-- This element needs an ID in order for persist to work! -->

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<!-- 
+<!--
  **** BEGIN LICENSE BLOCK ****
  Copyright(c) 2005 Adam Judson
 
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- Portions of this code have been based upon 
+ Portions of this code have been based upon
  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
  Copyright(c) 2002-2003 Daniel Savard.
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
- TamperData: 
+ TamperData:
  - track and modify http requests and responses
 
  This program is free software; you can redistribute it and/or modify it under
@@ -37,7 +37,7 @@
 <dialog id="tamper-popup" title="&tamperdata.tamperPopup.title;"
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-        buttons="accept,cancel" 
+        buttons="accept,cancel"
         ondialogaccept="TamperPopupDialog.modifyRequest();return true;"
         ondialogcancel="return true;"
         onload="TamperPopupDialog.init()"
@@ -65,27 +65,27 @@
    <vbox flex="1">
       <groupbox id="tamper group" flex="1">
          <caption id="uri text" label="" crop="end" flex="1"/>
-         <hbox flex="1">   
+         <hbox flex="1">
             <listbox id="header list" flex="1" context="tamper.popup.popup">
                <listcols>
                   <listcol minwidth="150" flex="1"/>
                   <listcol flex="2"/>
                </listcols>
-         
+
                <listhead>
                   <listheader label="&tamperdata.tamperPopup.request.header.name;"/>
                   <listheader label="&tamperdata.tamperPopup.request.header.value;"/>
                </listhead>
             </listbox>
-   
+
             <splitter id="bottomSplitter" state="open"/>
-   
+
             <listbox id="post data list" flex="1" context="tamper.popup.popup">
                <listcols>
                   <listcol minwidth="150" flex="1"/>
                   <listcol flex="2"/>
                </listcols>
-         
+
                <listhead>
                    <listheader label="&tamperdata.tamperPopup.post.parameter.name;"/>
                    <listheader label="&tamperdata.tamperPopup.post.parameter.value;"/>

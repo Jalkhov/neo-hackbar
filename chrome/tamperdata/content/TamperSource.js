@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -47,7 +47,7 @@ TamperSource.prototype = {
    setupGuiElements : function() {
       this.rawTextBox          = document.getElementById("tamper.source.rawTextBox");
       this.uncompressedTextBox = document.getElementById("tamper.source.uncompressedTextBox");
-      this.rawHbox             = document.getElementById("tamper.source.raw.hbox"); 
+      this.rawHbox             = document.getElementById("tamper.source.raw.hbox");
       this.splitter            = document.getElementById("tamper.source.splitter");
    },
 

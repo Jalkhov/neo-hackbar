@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -46,7 +46,7 @@ TamperRequestResponse.prototype = {
    millis : null,
    onLoadMillis : null,
    uri : null,
-   requestMethod : "?",   
+   requestMethod : "?",
    requestHeaders : null,
    postBodyHeaders : null,
    // this is a string
@@ -55,9 +55,9 @@ TamperRequestResponse.prototype = {
    // this isn't
    requestPostDataArray : null,
 
-   elapsedTime : 0,  
+   elapsedTime : 0,
    totalTime : 0,
-   responseHeaders : null, 
+   responseHeaders : null,
    loadFlags : null,
    status : "pending",
    statusText : "",
@@ -90,7 +90,7 @@ TamperRequestResponse.prototype = {
       // not sure I like this
       // we could probably just do:
       // this.requestHeaders = tamperResponse.requestHeaders;
-      // 
+      //
       // things that are different in request/response
       // - authentication is cached in ff, and is not added until after our hook
       // - pragma cache, and cache control are added after our hook on a forced refresh
@@ -152,7 +152,7 @@ TamperRequestResponse.prototype = {
                   // we keep the extracted data, so delete these so we don't try again
                   delete this.cacheKey;
                   delete this.cacheClient;
-      
+
                   // we might need to convert this data
                   var contentEncoding = this.responseHeaders["Content-Encoding"];
                   if (contentEncoding) {
@@ -247,7 +247,7 @@ TamperRequestResponse.prototype = {
          if (this.requestPostData) {
             this.requestPostDataArray = {};
             if (!this.requestPostDataIsBinary) {
-               var nameValues = String(this.requestPostData).split("&"); 
+               var nameValues = String(this.requestPostData).split("&");
                for (var i in nameValues) {
                   var nameValue = nameValues[i].split("=");
                   var name = nameValue[0];
@@ -268,13 +268,13 @@ TamperRequestResponse.prototype = {
    },
 
    toString : function() {
-      var text = this.time + "[" + this.elapsedTime + this.langString("ms") + "][" + 
-                 this.langString("total") + " " + this.getTotalTime() + this.langString("ms") + "] " + 
+      var text = this.time + "[" + this.elapsedTime + this.langString("ms") + "][" +
+                 this.langString("total") + " " + this.getTotalTime() + this.langString("ms") + "] " +
                  this.langString("status") + ": " + this.status + "[" + this.statusText + "]\n" +
-                 this.requestMethod + " " +  
-                 this.uri + " " + 
-                 this.langString("load.flags") + "[" + this.loadFlags + "] " +  
-                 this.langString("content.size") + "[" +  this.contentSize + "] " + 
+                 this.requestMethod + " " +
+                 this.uri + " " +
+                 this.langString("load.flags") + "[" + this.loadFlags + "] " +
+                 this.langString("content.size") + "[" +  this.contentSize + "] " +
                  this.langString("mime.type") + "[" + this.mimeType + "]\n";
 
       if (this.requestHeaders) {
@@ -314,7 +314,7 @@ TamperRequestResponse.prototype = {
       text += "<tdRequestHeaders>\n";
       if (this.requestHeaders) {
          for (var requestHeader in this.requestHeaders) {
-            text += "<tdRequestHeader name=\"" + requestHeader + "\">\n" + 
+            text += "<tdRequestHeader name=\"" + requestHeader + "\">\n" +
                     escape(this.requestHeaders[requestHeader]) + "</tdRequestHeader>\n";
          }
       }
@@ -322,7 +322,7 @@ TamperRequestResponse.prototype = {
       text += "<tdPostHeaders>";
       if (this.postBodyHeaders) {
          for (var postHeader in this.postBodyHeaders) {
-            text += "<tdPostHeader name=\"" + postHeader + "\">\n" + 
+            text += "<tdPostHeader name=\"" + postHeader + "\">\n" +
                     escape(this.postBodyHeaders[postHeader]) + "\n</tdPostHeader>\n";
          }
       }
@@ -331,7 +331,7 @@ TamperRequestResponse.prototype = {
       var postData = this.getPostDataArray();
       if (postData != null) {
          for (var name in postData) {
-            text += "<tdPostElement name=\"" + escape(name) +"\">\n" + 
+            text += "<tdPostElement name=\"" + escape(name) +"\">\n" +
                     escape(postData[name]) + "\n</tdPostElement>\n";
          }
       }
@@ -339,7 +339,7 @@ TamperRequestResponse.prototype = {
       text += "<tdResponseHeaders>";
       if (this.responseHeaders) {
          for (var responseHeader in this.responseHeaders) {
-            text += "<tdResponseHeader name=\"" + responseHeader + "\">\n" + 
+            text += "<tdResponseHeader name=\"" + responseHeader + "\">\n" +
                     escape(this.responseHeaders[responseHeader]) + "\n</tdResponseHeader>\n";
          }
       }
@@ -385,7 +385,7 @@ TamperRequestResponse.prototype = {
       var isFirst = true;
       for (i in this.requestHeaders) {
          myHeaders += i + ":" + this.requestHeaders[i] + "\r\n";
-      }            
+      }
       return TamperUtils.createStringInputStream(myHeaders);
    },
 
@@ -403,7 +403,7 @@ TamperRequestResponse.prototype = {
             // we keep the extracted data, so delete these so we don't try again
             delete this.cacheKey;
             delete this.cacheClient;
-   
+
             // we might need to convert this data
             var contentEncoding = this.responseHeaders["Content-Encoding"];
             if (contentEncoding) {
@@ -421,7 +421,7 @@ TamperRequestResponse.prototype = {
       } else {
          TamperUtils.log("Cache entry listener failed: " + status);
       }
-   }, 
+   },
 
    visitMetaDataElement : function(key, value) {
       TamperUtils.log("Visiting Meta data for [" + this.uri + "] - [" + key + "][" + value + "]");
@@ -442,7 +442,7 @@ TamperRequestResponse.prototype = {
    mustValidate : function() {
       for (var h in this.requestHeaders) {
          if (h.match(/^(If-Modified-Since|If-None-Match)$/)) {
-            return true; 
+            return true;
          }
       }
       return false;

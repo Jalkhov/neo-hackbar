@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -70,7 +70,7 @@ Tamper.prototype = {
       }
       this.addToListener();
    },
-   
+
    stop : function() {
       this.removeFromListener();
       this.gui.stop();
@@ -116,11 +116,11 @@ Tamper.prototype = {
          this.onLoadHandler(aSubject, aData);
       }
    },
-   
+
    saveAll: function(title) {
       saveAs(this.getAll(),title);
    },
-   
+
    saveSelection: function(title) {
       saveAs(this.getSelection(),title);
    },
@@ -139,7 +139,7 @@ Tamper.prototype = {
       var cancelled = false;
       if (!loadFromCache) {
 
-         // if we are replaying this, then replace all of the headers with the 
+         // if we are replaying this, then replace all of the headers with the
          // saved copy
          this.modifyForReplay(uri, oHttp);
 
@@ -195,7 +195,7 @@ Tamper.prototype = {
          visitHeader : function (name, value) {
             this.request[name] = value;
          },
-   
+
          emptyHeaders: function () {
             this.oHttp.visitRequestHeaders(this);
             for (var i in this.request) {
@@ -269,7 +269,7 @@ Tamper.prototype = {
       if (flags & Components.interfaces.nsIChannel.LOAD_TARGETED) {
          flagString += "LOAD_TARGETED  ";
       }
-      if ((Components.interfaces.nsICachingChannel.LOAD_BYPASS_LOCAL_CACHE_IF_BUSY) && 
+      if ((Components.interfaces.nsICachingChannel.LOAD_BYPASS_LOCAL_CACHE_IF_BUSY) &&
           (flags & Components.interfaces.nsICachingChannel.LOAD_BYPASS_LOCAL_CACHE_IF_BUSY)) {
          flagString += "LOAD_BYPASS_LOCAL_CACHE_IF_BUSY ";
       }
@@ -289,7 +289,7 @@ Tamper.prototype = {
             }
          }
       }
-   },   
+   },
 
    // this doesn't actually seem to work...
    forceResponseCaching : function(request) {
@@ -303,12 +303,12 @@ Tamper.prototype = {
             TamperUtils.log("Forcing cache on response: [" + request.URI.asciiSpec + "]");
          }
       }
-   },   
+   },
 
    isLoadFromCache : function(flags) {
       return flags & Components.interfaces.nsIRequest.LOAD_FROM_CACHE;
    },
-   
+
    onExamineResponse : function (oHttp) {
       var uri = oHttp.URI.asciiSpec;
 
@@ -330,7 +330,7 @@ Tamper.prototype = {
             TamperUtils.log("Problem with cacheToken: " + uri + " - " + e);
          }
       }
-      
+
       var requestResponse = new TamperRequestResponse();
       requestResponse.setResponseData(uri, new Date(), oHttp.requestMethod, oHttp.contentLength, oHttp.responseStatus, oHttp.responseStatusText, oHttp.contentType, responseHeaders, requestHeaders);
       var oldRequest = this.matchAndMergeRequest(requestResponse);
@@ -369,7 +369,7 @@ Tamper.prototype = {
       observerService.addObserver(this, "http-on-examine-response", false);
       observerService.addObserver(this, "tamper-data-on-load",      false);
    },
-   
+
    removeFromListener: function() {
       // Unregistering listener
       var observerService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
@@ -390,7 +390,7 @@ HeaderInfoVisitor.prototype =  {
          // Scriptable Stream Constants
          this.seekablestream = stream;
          this.stream = TamperUtils.createScriptableInputStream(this.seekablestream);
-         
+
          // Check if the stream has headers
          this.hasheaders = false;
          this.body = 0;
@@ -415,7 +415,7 @@ HeaderInfoVisitor.prototype =  {
          tell: function() {
             return this.seekablestream.tell();
          },
-   
+
          readLine: function() {
             var line = "";
             var size = this.stream.available();
@@ -430,7 +430,7 @@ HeaderInfoVisitor.prototype =  {
             }
             return line;
          },
-   
+
          // visitor can be null, function has side-effect of setting body
          visitPostHeaders: function(visitor) {
             if (this.hasheaders) {
@@ -457,13 +457,13 @@ HeaderInfoVisitor.prototype =  {
                this.body = this.tell();
             }
          },
-   
+
          getPostBody: function(visitor) {
             // Position the stream to the start of the body
             if (this.body < 0 || this.seekablestream.tell() != this.body) {
                this.visitPostHeaders(visitor);
             }
-            
+
             var size = this.stream.available();
             if (size == 0 && this.body != 0) {
                // whoops, there weren't really headers..
@@ -494,8 +494,8 @@ HeaderInfoVisitor.prototype =  {
             return postString;
          }
       };
-   
-      // Get the postData stream from the Http Object 
+
+      // Get the postData stream from the Http Object
       try {
          // Must change HttpChannel to UploadChannel to be able to access post data
          oHttp.QueryInterface(Components.interfaces.nsIUploadChannel);
@@ -505,14 +505,14 @@ HeaderInfoVisitor.prototype =  {
             oHttp.uploadStream.QueryInterface(Components.interfaces.nsISeekableStream);
             // And return a postData object
             return new postData(oHttp.uploadStream);
-         } 
+         }
       } catch (e) {
          TamperUtils.log("Got an exception retrieving the post data: [" + e + "]");
          return "crap";
       }
       return null;
    },
-   
+
    visitHeader : function(name, value) {
       this.headers[name] = value;
    },
@@ -533,7 +533,7 @@ HeaderInfoVisitor.prototype =  {
    visitRequest : function () {
       this.headers = {};
       this.oHttp.visitRequestHeaders(this);
-      
+
       // There may be post data in the request
       var postData = this.extractPostData(this, this.oHttp);
       if (postData) {
@@ -552,7 +552,7 @@ HeaderInfoVisitor.prototype =  {
    getPostBodyHeaders : function() {
       return this.postBodyHeaders ? this.postBodyHeaders : null;
    },
-   
+
    visitResponse : function () {
       this.headers = new Array();
       this.oHttp.visitResponseHeaders(this);

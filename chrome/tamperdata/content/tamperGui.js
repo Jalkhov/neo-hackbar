@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -257,7 +257,7 @@ TamperGui.prototype = {
       var flags=promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_0 +
                 promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_1 +
                 promptService.BUTTON_TITLE_IS_STRING * promptService.BUTTON_POS_2;
-      
+
       // display the dialog box. The flags set above are passed
       // as the fourth argument. The next three arguments are custom labels used for
       // the buttons, which are used if BUTTON_TITLE_IS_STRING is assigned to a
@@ -273,12 +273,12 @@ TamperGui.prototype = {
                       window,
                       this.langString("tamper.prompt"),
                       uri + "\n",
-                      flags, 
-                      this.langString("tamper"), 
+                      flags,
+                      this.langString("tamper"),
                       this.langString("tamper.abort"),
                       this.langString("tamper.submit"),
                       this.langString("tamper.continue"),
-                      continueTampering);   
+                      continueTampering);
 
       if (!continueTampering.value) {
          oTamper.isTampering = false;
@@ -359,7 +359,7 @@ TamperGui.prototype = {
             win.gBrowser.selectedTab = win.gBrowser.addTab("about:blank");
             // we don't bother with the headers here, as the browser adds stuff anyway
             // we deal with them in oTamper.onModifyRequest()
-            win.gBrowser.webNavigation.loadURI(uri, 
+            win.gBrowser.webNavigation.loadURI(uri,
                                                loadFlags,
                                                item.getRefererURI(),
                                                item.getPostDataStream(),
@@ -408,12 +408,12 @@ TamperGui.prototype = {
    alertTidyDisable : function() {
       window.alert("Disabled HTML Validator.\nRunning both extensions will cause browser hangs (firefox bug #317732).\nYou may safely re-enable it when the tamperdata window is closed");
    },
-   
+
    clear : function(tamper) {
       // the data has been emptied, tell the tree
       this.tree.data = tamper;
       this.enableClearCommand(false);
-   }, 
+   },
 
    currentFilter : null,
 

@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -156,7 +156,7 @@ TamperURI.prototype = {
       } else {
          return null;
       }
-   }, 
+   },
 
    addItem : function(parent, element, name, data) {
       if (parent == this.getParametersList || element == this.getParametersList) {
@@ -182,7 +182,7 @@ URI.prototype = {
    init : function(uriString) {
       if (uriString) {
          var url = Components.classes["@mozilla.org/network/standard-url;1"].createInstance(Components.interfaces.nsIURI);
-         
+
          url.spec = uriString;
          this.protocol = url.scheme;
          this.port = (url.port == -1 ? "" : url.port);
@@ -204,7 +204,7 @@ URI.prototype = {
          this.reference = url.ref;
          if (this.reference && (this.path.indexOf("#") > 0)) {
             this.path = this.path.substring(0, this.path.indexOf("#"));
-         }            
+         }
       }
 
    },

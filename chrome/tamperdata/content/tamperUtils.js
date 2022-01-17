@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -75,16 +75,16 @@ TamperUtils.unHTMLValue = function(value) {
 TamperUtils.translate = function(value, how) {
    var hex = (how == TamperUtils.HEX);
    var newValue = "";
-   for (var index = 0; index < value.length; index++) { 
+   for (var index = 0; index < value.length; index++) {
       var charcode = value.charCodeAt(index);
-      newValue += "&#";  
+      newValue += "&#";
       if (hex) {
-         newValue += "x";  
+         newValue += "x";
          newValue += TamperUtils.decimalToHex(charcode);
       } else {
          newValue += charcode;
       }
-      newValue += ";";  
+      newValue += ";";
    }
    return newValue;
 };
@@ -119,11 +119,11 @@ TamperUtils.loadFile = function(promptText) {
    var stream = Components.classes["@mozilla.org/network/file-input-stream;1"].createInstance(Components.interfaces.nsIFileInputStream);
    var streamIO = Components.classes["@mozilla.org/scriptableinputstream;1"].createInstance(Components.interfaces.nsIScriptableInputStream);
    var validFile = false;
-   
+
    fp.init(window, promptText, fp.modeOpen);
    fp.appendFilters(fp.filterText);
 
-   var input;   
+   var input;
    if (fp.show() != fp.returnCancel) {
       stream.init(fp.file, 0x01, 0444, null);
       streamIO.init(stream);
@@ -137,16 +137,16 @@ TamperUtils.loadFile = function(promptText) {
 TamperUtils.writeFile = function(promptText, data) {
    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(Components.interfaces.nsIFilePicker);
    var stream = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance(Components.interfaces.nsIFileOutputStream);
-   
+
    fp.init(window, promptText, fp.modeSave);
    fp.appendFilters(fp.filterText);
-   
+
    if (fp.show() != fp.returnCancel) {
       if (fp.file.exists()) {
          fp.file.remove(true);
       }
       fp.file.create(fp.file.NORMAL_FILE_TYPE, 0666);
-   
+
       stream.init(fp.file, 0x02, 0x200, null);
       stream.write(data, data.length);
       stream.close();
@@ -159,7 +159,7 @@ TamperUtils.getTime = function(time) {
    if (curr_min < 10) {
       curr_min = "0" + curr_min;
    }
-   
+
    var curr_sec = time.getSeconds();
    if (curr_sec < 10) {
       curr_sec = "0" + curr_sec;
@@ -195,7 +195,7 @@ TamperUtils.uncompressStream = function(dataStream, from) {
    var listener = {
       data : "",
       onDataAvailable : function(request, context, stream, offset, count) {
-         this.data = this.data + TamperUtils.readAll(stream, true);   
+         this.data = this.data + TamperUtils.readAll(stream, true);
       },
       onStartRequest : function(request, context) {
       },
@@ -285,7 +285,7 @@ NS_ERROR_GENERATE_FAILURE = function(module, code) {
 }
 
 const NS_ERROR_MODULE_NETWORK = 6;
- 
+
 TamperUtils.getErrorKey = function(exception) {
    // error service didn't work...
    var result = exception.result;
@@ -308,203 +308,203 @@ TamperUtils.getErrorKey = function(exception) {
    case Components.results.NS_ERROR_ALREADY_INITIALIZED:
       errorKey="NS_ERROR_ALREADY_INITIALIZED";
       break;
-      
+
    case Components.results.NS_ERROR_NOT_IMPLEMENTED:
       errorKey="NS_ERROR_NOT_IMPLEMENTED";
       break;
-      
+
    case Components.results.NS_NOINTERFACE:
       errorKey="NS_NOINTERFACE";
       break;
-      
+
    case Components.results.NS_ERROR_NO_INTERFACE:
       errorKey="NS_ERROR_NO_INTERFACE";
       break;
-      
+
    case Components.results.NS_ERROR_INVALID_POINTER:
       errorKey="NS_ERROR_INVALID_POINTER";
       break;
-      
+
    case Components.results.NS_ERROR_NULL_POINTER:
       errorKey="NS_ERROR_NULL_POINTER";
       break;
-      
+
    case Components.results.NS_ERROR_ABORT:
       errorKey="NS_ERROR_ABORT";
       break;
-      
+
    case Components.results.NS_ERROR_FAILURE:
       errorKey="NS_ERROR_FAILURE";
       break;
-      
+
    case Components.results.NS_ERROR_UNEXPECTED:
       errorKey="NS_ERROR_UNEXPECTED";
       break;
-      
+
    case Components.results.NS_ERROR_OUT_OF_MEMORY:
       errorKey="NS_ERROR_OUT_OF_MEMORY";
       break;
-      
+
    case Components.results.NS_ERROR_ILLEGAL_VALUE:
       errorKey="NS_ERROR_ILLEGAL_VALUE";
       break;
-      
+
    case Components.results.NS_ERROR_INVALID_ARG:
       errorKey="NS_ERROR_INVALID_ARG";
       break;
-      
+
    case Components.results.NS_ERROR_NO_AGGREGATION:
       errorKey="NS_ERROR_NO_AGGREGATION";
       break;
-      
+
    case Components.results.NS_ERROR_NOT_AVAILABLE:
       errorKey="NS_ERROR_NOT_AVAILABLE";
       break;
-      
+
    case Components.results.NS_ERROR_FACTORY_NOT_REGISTERED:
       errorKey="NS_ERROR_FACTORY_NOT_REGISTERED";
       break;
-      
+
    case Components.results.NS_ERROR_FACTORY_REGISTER_AGAIN:
       errorKey="NS_ERROR_FACTORY_REGISTER_AGAIN";
       break;
-      
+
    case Components.results.NS_ERROR_FACTORY_NOT_LOADED:
       errorKey="NS_ERROR_FACTORY_NOT_LOADED";
       break;
-      
+
    case Components.results.NS_ERROR_FACTORY_NO_SIGNATURE_SUPPORT:
       errorKey="NS_ERROR_FACTORY_NO_SIGNATURE_SUPPORT";
       break;
-      
+
    case Components.results.NS_ERROR_FACTORY_EXISTS:
       errorKey="NS_ERROR_FACTORY_EXISTS";
       break;
-      
+
    case Components.results.NS_ERROR_PROXY_INVALID_IN_PARAMETER:
       errorKey="NS_ERROR_PROXY_INVALID_IN_PARAMETER";
       break;
-      
+
    case Components.results.NS_ERROR_PROXY_INVALID_OUT_PARAMETER:
       errorKey="NS_ERROR_PROXY_INVALID_OUT_PARAMETER";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_CLOSED:
       errorKey="NS_BASE_STREAM_CLOSED";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_OSERROR:
       errorKey="NS_BASE_STREAM_OSERROR";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_ILLEGAL_ARGS:
       errorKey="NS_BASE_STREAM_ILLEGAL_ARGS";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_NO_CONVERTER:
       errorKey="NS_BASE_STREAM_NO_CONVERTER";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_BAD_CONVERSION:
       errorKey="NS_BASE_STREAM_BAD_CONVERSION";
       break;
-      
+
    case Components.results.NS_BASE_STREAM_WOULD_BLOCK:
       errorKey="NS_BASE_STREAM_WOULD_BLOCK";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_UNRECOGNIZED_PATH:
       errorKey="NS_ERROR_FILE_UNRECOGNIZED_PATH";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_UNRESOLVABLE_SYMLINK:
       errorKey="NS_ERROR_FILE_UNRESOLVABLE_SYMLINK";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_EXECUTION_FAILED:
       errorKey="NS_ERROR_FILE_EXECUTION_FAILED";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_UNKNOWN_TYPE:
       errorKey="NS_ERROR_FILE_UNKNOWN_TYPE";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_DESTINATION_NOT_DIR:
       errorKey="NS_ERROR_FILE_DESTINATION_NOT_DIR";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_TARGET_DOES_NOT_EXIST:
       errorKey="NS_ERROR_FILE_TARGET_DOES_NOT_EXIST";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_COPY_OR_MOVE_FAILED:
       errorKey="NS_ERROR_FILE_COPY_OR_MOVE_FAILED";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_ALREADY_EXISTS:
       errorKey="NS_ERROR_FILE_ALREADY_EXISTS";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_INVALID_PATH:
       errorKey="NS_ERROR_FILE_INVALID_PATH";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_DISK_FULL:
       errorKey="NS_ERROR_FILE_DISK_FULL";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_CORRUPTED:
       errorKey="NS_ERROR_FILE_CORRUPTED";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_NOT_DIRECTORY:
       errorKey="NS_ERROR_FILE_NOT_DIRECTORY";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_IS_DIRECTORY:
       errorKey="NS_ERROR_FILE_IS_DIRECTORY";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_IS_LOCKED:
       errorKey="NS_ERROR_FILE_IS_LOCKED";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_TOO_BIG:
       errorKey="NS_ERROR_FILE_TOO_BIG";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_NO_DEVICE_SPACE:
       errorKey="NS_ERROR_FILE_NO_DEVICE_SPACE";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_NAME_TOO_LONG:
       errorKey="NS_ERROR_FILE_NAME_TOO_LONG";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_NOT_FOUND:
       errorKey="NS_ERROR_FILE_NOT_FOUND";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_READ_ONLY:
       errorKey="NS_ERROR_FILE_READ_ONLY";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_DIR_NOT_EMPTY:
       errorKey="NS_ERROR_FILE_DIR_NOT_EMPTY";
       break;
-      
+
    case Components.results.NS_ERROR_FILE_ACCESS_DENIED:
       errorKey="NS_ERROR_FILE_ACCESS_DENIED";
       break;
-      
+
    case Components.results.NS_ERROR_CANNOT_CONVERT_DATA:
       errorKey="NS_ERROR_CANNOT_CONVERT_DATA";
       break;
-      
+
    case Components.results.NS_ERROR_OBJECT_IS_IMMUTABLE:
       errorKey="NS_ERROR_OBJECT_IS_IMMUTABLE";
       break;
-      
+
    case Components.results.NS_ERROR_LOSS_OF_SIGNIFICANT_DATA:
       errorKey="NS_ERROR_LOSS_OF_SIGNIFICANT_DATA";
       break;

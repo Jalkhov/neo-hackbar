@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -45,8 +45,8 @@ TamperPreferences.DYNAMIC_PREFILL_PREFIX = "prefill.dynamic.";
 TamperPreferences.prototype = {
    PREFERENCES_ROOT     : "extensions.tamperdata.",
    TAMPER_IMAGES        : "shouldTamperImages",
-   ADD_REPLACE_EXISTING : "shouldAddOverwritesExisting", 
-   FORCE_CACHING        : "forceCaching", 
+   ADD_REPLACE_EXISTING : "shouldAddOverwritesExisting",
+   FORCE_CACHING        : "forceCaching",
    TAMPER_DEBUG         : "debug",
 
    init : function() {
@@ -141,7 +141,7 @@ TamperPreferences.prototype = {
 
       var set = {};
       var allItems = this.getPrefillItems(prefix, "");
-      // this is everything, 
+      // this is everything,
       // loop through them, keeping onthe unique ones
       for (var i in allItems) {
          // get the key
@@ -152,7 +152,7 @@ TamperPreferences.prototype = {
          }
       }
       return items;
-   }, 
+   },
 
    getPrefillCategories : function() {
       return this.getCategories(TamperPreferences.PREFILL_PREFIX);

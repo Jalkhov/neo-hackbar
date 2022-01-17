@@ -83,7 +83,7 @@ livehttpheaders.live.HeaderInfoLive = function()
   this.names= new Array(); //Names for tree's images
   this.atoms= new Array(); //Atoms for tree's styles
   this.observers = new Array(); // LiveHTTPHeaders's Observers
- 
+
   // Read preferences
   this.pref = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
   this.lpref = this.pref.getBranch("extensions.livehttpheaders."); // Live
@@ -115,8 +115,8 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   SINGLE: 400,
   // Strings
   SEPSTRING: "----------------------------------------------------------\r\n",
- 
-  test : null, 
+
+  test : null,
   oDump: null,
   isCapturing: true,
 
@@ -148,11 +148,11 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   isContainer: function(index) { return false; },
   isContainerOpen: function(index) { },
   isContainerEmpty: function(index) { return false; },
-  isSeparator: function(index) { 
+  isSeparator: function(index) {
     if (this.usestyle) {
-      return false ; 
+      return false ;
     } else {
-      return this.type[index]==this.SEPARATOR; 
+      return this.type[index]==this.SEPARATOR;
     }
   },
   isSorted: function() { },
@@ -160,13 +160,13 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   canDropBeforeAfter: function(index, before) { return false; },
   drop: function(row, orientation) { return false; },
   getParentIndex: function(index) { return 0; },
-  hasNextSibling: function(index, after) { 
+  hasNextSibling: function(index, after) {
     if (this.type[index+1] == this.POSTDATA) return true;
-    return false; 
+    return false;
   },
-  getLevel: function(index) { 
+  getLevel: function(index) {
     if (this.type[index] == this.POSTDATA) return 1;
-    return 0; 
+    return 0;
   },
   getImageSrc: function(row, column) { },
   getProgressMode: function(row, column) { },
@@ -181,7 +181,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   performActionOnCell: function(action, row, column) { },
 
   // Tree utility functions
-  addRow: function(row, type) { 
+  addRow: function(row, type) {
     // Compute the style
     var style;
     if (this.rows>0) {
@@ -273,16 +273,16 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   {
     return this.oDump.view.selection.selectAll();
   },
- 
+
   toClipboard: function(data) {
     livehttpheaders.info.toClipboard(data);
   },
-  
+
   copy: function()
   {
     this.toClipboard(this.getSelection());
   },
- 
+
   getSelection: function()
   {
     var selection = this.oDump.view.selection;
@@ -302,9 +302,9 @@ livehttpheaders.live.HeaderInfoLive.prototype =
     }
     return data;
   },
-  
+
   getAll: function()
-  { 
+  {
     var data = "";
     for (var row=0; row<this.rows; row++) {
       if (this.type[row]==this.SEPARATOR) {
@@ -357,7 +357,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   {
     this.oDump = document.getElementById("headerinfo-dump");
     this.oDump.treeBoxObject.view = this;
- 
+
     // Set configuration tab
     try {
         document.getElementById("headerinfo-mode").selectedIndex=this.mode;
@@ -459,7 +459,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   {
     livehttpheaders.info.saveAs(this.getAll(),title);
   },
-  
+
   saveSelection: function(title)
   {
     livehttpheaders.info.saveAs(this.getSelection(),title);
@@ -468,7 +468,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
   replay: function()
   {
     var method=null, url=null, version=null, request=null, postdata=null;
-    
+
     var selection = this.oDump.view.selection;
     var index = selection.currentIndex;
     if (index>=0 && this.type[index]!=this.SEPARATOR) {
@@ -481,7 +481,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
         switch(this.type[i]) {
         case this.URL: url = data;
                        break;
-        case this.REQUEST: 
+        case this.REQUEST:
                        if (!method) {
                          var tmp = data.match(/^(\S+).*\/(\S+)/);
                          method = tmp[1];
@@ -490,14 +490,14 @@ livehttpheaders.live.HeaderInfoLive.prototype =
                          request?request=request+data:request=data;
                        }
                        break;
-        case this.POSTDATA: 
+        case this.POSTDATA:
                        postdata?postdata=postdata+data:postdata=data;
                        break;
         }
-      }  
+      }
       var replaywindow = "chrome://livehttpheaders/content/LiveHTTPReplay.xul";
       var replayoptions = "chrome,dialog=no,extrachrome,menubar,resizable,scrollbars,status,toolbar";
-      window.openDialog(replaywindow, "_blank", replayoptions, 
+      window.openDialog(replaywindow, "_blank", replayoptions,
                         this, method, url, version, request, postdata);
     }
   },
@@ -518,7 +518,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
         if (header) {
           //dump("Found: " + header[1] +"="+header[2]+"\n");
           if (!header[1].match(/^(Content-Length)$/)) req[header[1]]=header[2];
-          if (header[1].match(/^(If-Modified-Since|If-None-Match)$/)) mustValidate=true; 
+          if (header[1].match(/^(If-Modified-Since|If-None-Match)$/)) mustValidate=true;
         }
       }
       // Change the post data to an InputStream
@@ -530,13 +530,13 @@ livehttpheaders.live.HeaderInfoLive.prototype =
         //const nsIScriptableInputStream = Components.interfaces.nsIScriptableInputStream;
         const MIME_STREAM_CID = "@mozilla.org/network/mime-input-stream;1";
         const nsIMIMEInputStream = Components.interfaces.nsIMIMEInputStream;
-        
+
         var sis = Components.classes[STRING_STREAM_CID];
         tmp = sis.createInstance(nsIStringInputStream);
         //postdata = "\r\n" + postdata; // Add header separator at begining
         tmp.setData (postdata, postdata.length);
         tmp.QueryInterface(Components.interfaces.nsISeekableStream);
-        
+
         // Create a scriptable stream
         //var scis = Components.classes[SCRIPTABLE_STREAM_CID];
         //post = scis.createInstance(nsIScriptableInputStream);
@@ -566,7 +566,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
       this.check[url] = req;
 
       // And load the URL
-      // Note that there may be some problems if the server answer with:304 use local copy... 
+      // Note that there may be some problems if the server answer with:304 use local copy...
       if (mustValidate) {
         browser.loadURI(url,Components.interfaces.nsIRequest.MUST_VALIDATE,null,post,null);
       } else {
@@ -575,7 +575,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
         var cacheService = classID.getService(Components.interfaces.nsICacheService);
 
         try {
- 
+
           var cacheSession = cacheService.createSession('HTTP',0,true);
           //var cacheSession = cacheService.createSession('HTTP-memory-only',1,true);
           var cacheEntryDescriptor = cacheSession.openCacheEntry(url.match(/^[^#]+/) ,
@@ -589,7 +589,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
 
         // Must clear memory cache because the above tips doesn't work for memory...
         cacheService.evictEntries(Components.interfaces.nsICache.STORE_IN_MEMORY);
-    
+
         browser.loadURI(url,0,null,post,null);
       }
     }
@@ -745,7 +745,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
     //for (i in this.test) {
     //    dump("URL: " + i + "\n");
     //}
- 
+
     // Get the request headers
     var request = visitor.visitRequest();
     // and extract Post Data if present
@@ -753,7 +753,7 @@ livehttpheaders.live.HeaderInfoLive.prototype =
     delete request["POSTDATA"];
     //DSMT
     //this.request[name]["CACHE"] = oHttp.cacheToken;
- 
+
     // Get the response headers
     var response = visitor.visitResponse();
     //dumpall("oHttp",oHttp,5);
@@ -813,7 +813,7 @@ livehttpheaders.live.HeaderInfoVisitor = function(oHttp)
   this.oHttp = oHttp;
   this.headers = new Array();
 }
-livehttpheaders.live.HeaderInfoVisitor.prototype = 
+livehttpheaders.live.HeaderInfoVisitor.prototype =
 {
   oHttp : null,
   headers : null,
@@ -853,7 +853,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
     // This code is based on netwerk/base/src/nsProtocolProxyService.cpp (ExamineForProxy)
     try {
       var pps = Components.classes["@mozilla.org/network/protocol-proxy-service;1"].getService().QueryInterface(Components.interfaces.nsIProtocolProxyService);
-      
+
           // If a proxy is used for this url, we need to keep the host part
       if (typeof(pps.proxyEnabled) != "undefined") {
         // Mozilla up to 1.7
@@ -903,7 +903,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
       this.mode = this.FAST;
 
       // Check if the stream has headers
-      try { 
+      try {
         this.seekablestream.QueryInterface(Components.interfaces.nsIMIMEInputStream);
         this.hasheaders = true;
         this.body = -1; // Must read header to find body
@@ -992,7 +992,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
           //dump("Exception while getting POST CONTENT with mode "+this.mode+": "+ex+"\n");
           return ""+ex;
         } finally {
-          // Need to close the stream after use.  
+          // Need to close the stream after use.
           //this.seekablestream.close();
           //this.stream.close();
           //this.seekablestream.seek(2,0);
@@ -1001,8 +1001,8 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
 	return postString;
       }
     }
-   
-    // Get the postData stream from the Http Object 
+
+    // Get the postData stream from the Http Object
     try {
       // Must change HttpChannel to UploadChannel to be able to access post data
       oHttp.QueryInterface(Components.interfaces.nsIUploadChannel);
@@ -1012,7 +1012,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
         oHttp.uploadStream.QueryInterface(Components.interfaces.nsISeekableStream);
         // And return a postData object
         return new postData(oHttp.uploadStream);
-      } 
+      }
     } catch (e) {
       //dump("POSTDATAEXCEPTION:"+e+"\n");
     }
@@ -1027,7 +1027,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
     this.headers = new Array();
     var uri, note, ver;
     try {
-      
+
       // Get the URL and get parts
       // Should I use  this.oHttp.URI.prePath and this.oHttp.URI.path to make
       // the URL ?  I still need to remove the '#' sign if present in 'path'
@@ -1046,7 +1046,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
       uri = String(this.oHttp.URI.asciiSpec);
       note = "Unsure about the precedent REQUEST uri";
     }
-    this.headers["REQUEST"] = this.oHttp.requestMethod + " " 
+    this.headers["REQUEST"] = this.oHttp.requestMethod + " "
                             + uri + " HTTP/" + ver;
     if (note) this.headers["NOTE"] = note;
     this.oHttp.visitRequestHeaders(this);
@@ -1066,7 +1066,7 @@ livehttpheaders.live.HeaderInfoVisitor.prototype =
   {
     var ver = this.getHttpResponseVersion();
     this.headers = new Array();
-    this.headers["RESPONSE"] = "HTTP/" + ver + " " + this.oHttp.responseStatus 
+    this.headers["RESPONSE"] = "HTTP/" + ver + " " + this.oHttp.responseStatus
                     + " " + this.oHttp.responseStatusText;
     //this.headers["loadGroup"] = this.oHttp.loadGroup
     //this.headers["owner"] = this.oHttp.owner

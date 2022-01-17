@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -50,7 +50,7 @@ TamperMenu.prototype = {
       this.popupShowing = 0;
       this.utilityEntries = null;
       this.getUtilityEntries();
-   }, 
+   },
 
    getUtilityEntries : function() {
       if (this.utilityEntries == null) {
@@ -66,7 +66,7 @@ TamperMenu.prototype = {
       }
       return this.utilityEntries;
    },
-   
+
    loadMenuItems : function() {
       this.addItemsToList(this.menuItems, this.preferences.getPrefillCategories(), TamperPreferences.PREFILL_PREFIX);
       this.addItemsToList(this.dynamicItems, this.preferences.getDynamicPrefillCategories(), TamperPreferences.DYNAMIC_PREFILL_PREFIX);
@@ -83,12 +83,12 @@ TamperMenu.prototype = {
          }
          list[key] = entries;
       }
-   }, 
+   },
 
    getValue : function(key, item, list) {
       return this[list][key][item];
    },
-   
+
    clearPopup : function(popup) {
       for(var i = popup.childNodes.length - 1; i >= 0; i--) {
          popup.removeChild(popup.childNodes.item(i));
@@ -103,14 +103,14 @@ TamperMenu.prototype = {
 
          var name = document.popupNode.parentNode.getAttribute("tamper.name");
          // add some simple entries
-         this.addPopupMenuItem(popup, 
-                               this.langString("add.element"), 
+         this.addPopupMenuItem(popup,
+                               this.langString("add.element"),
                                "TamperMenu.instance.addItem(document.popupNode);");
-         this.addPopupMenuItem(popup, 
-                               this.langString("add.elements"), 
+         this.addPopupMenuItem(popup,
+                               this.langString("add.elements"),
                                "TamperMenu.instance.addItems(document.popupNode);");
-         this.addPopupMenuItem(popup, 
-                               this.langString("add.elements.from.file"), 
+         this.addPopupMenuItem(popup,
+                               this.langString("add.elements.from.file"),
                                "TamperMenu.instance.importItems(document.popupNode);");
          // evil hack for add
          var myAddMenu = document.createElement("menu");
@@ -129,7 +129,7 @@ TamperMenu.prototype = {
                this.addPopupMenuItem(popup, element, utilItems[element]);
             }
             this.addPopupSeparator(popup);
-            
+
             // now the complex entries
             var myPopup, myMenu;
             for (var menuKey in this.menuItems) {
@@ -158,7 +158,7 @@ TamperMenu.prototype = {
          }
       }
    },
-   
+
    unCustomizePopup : function() {
       if (this.popupShowing > 0) {
          this.popupShowing--;
@@ -173,7 +173,7 @@ TamperMenu.prototype = {
          }
       }
    },
-   
+
    addPopupItem  : function(parent, key, id, list) {
       this.addPopupMenuItem(parent, id, "TamperMenu.instance.menuSelect(document.popupNode, '" + key + "', '" + id + "', '" + list + "');");
    },

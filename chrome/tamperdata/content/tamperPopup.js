@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -108,7 +108,7 @@ TamperPopupDialog.prototype = {
             for (i in this.workingPostData) {
                dataObj = this.workingPostData[i];
                if (!dataObj.deleted) {
-                  // if values have been added or deleted to binary data, 
+                  // if values have been added or deleted to binary data,
                   // bad things will probably happen...
                   if (!this.postDataObject.binary) {
                      if (!isFirst) {
@@ -122,7 +122,7 @@ TamperPopupDialog.prototype = {
                   }
                }
             }
-   
+
             this.request.QueryInterface(Components.interfaces.nsIUploadChannel);
             var uploadStream = this.request.uploadStream;
             if (uploadStream instanceof Components.interfaces.nsIMIMEInputStream) {
@@ -203,7 +203,7 @@ TamperPopupDialog.prototype = {
          this.postbody = this.postDataObject.body;
          // if this is binary, we should treat it differently
          if (!this.postDataObject.binary) {
-            this.postdata = this.postbody.split("&"); 
+            this.postdata = this.postbody.split("&");
             var count = 0;
             for (i in this.postdata) {
                if (count == 0) {
@@ -316,7 +316,7 @@ TamperPopupDialog.prototype = {
       } else {
          return null;
       }
-   }, 
+   },
 
    addItem : function(parent, element, name, data) {
       var old;

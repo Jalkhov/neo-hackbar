@@ -2,13 +2,13 @@
 //  Copyright(c) 2005 Adam Judson
 //
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//  Portions of this code have been based upon 
+//  Portions of this code have been based upon
 //  LiveHttpHeaders  - http://livehttpheaders.mozdev.org
 //  Copyright(c) 2002-2003 Daniel Savard.
 //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 //
-//  TamperData: 
+//  TamperData:
 //  - track and modify http requests and responses
 //
 //  This program is free software; you can redistribute it and/or modify it under
@@ -31,7 +31,7 @@
 
 //
 //  TamperOptions is the controller for tamperOptions.xul
-//  The TamperPreferences class is used to access the values we 
+//  The TamperPreferences class is used to access the values we
 //  get and set.
 //
 //
@@ -46,8 +46,8 @@ TamperOptions.init = function() {
 };
 
 // these are things we shouldn't delete
-TamperOptions.staticOptions = {"xss" : true, 
-                               "sql" : true, 
+TamperOptions.staticOptions = {"xss" : true,
+                               "sql" : true,
                                "data": true,
                                "add" : true};
 
@@ -86,7 +86,7 @@ TamperOptions.prototype = {
          list.removeChild(nodes.item(i));
       }
    },
-   
+
    populatePrefillList : function() {
       this.clearListWithHeaders(this.prefillList);
       // add static entries
@@ -195,11 +195,11 @@ TamperOptions.prototype = {
    itemValueChanged : function() {
       var itemKey = this.itemText.tamperItemKey;
       var newText = this.itemText.value;
-      
+
       TamperUtils.log("Setting value [" + itemKey + "][" + newText + "]");
       this.preferences.setString(itemKey, newText);
       var listBoxItem = document.getElementById(itemKey);
-      if (listBoxItem) {   
+      if (listBoxItem) {
          listBoxItem.setAttribute("tamper.item.value", newText);
       }
    },
@@ -214,9 +214,9 @@ TamperOptions.prototype = {
       var retVal = promptService.prompt(window,
                                         this.langString("new.entry"),
                                         this.langString("enter.name"),
-                                        entryName, 
+                                        entryName,
                                         this.langString("static.entry"),
-                                        staticEntry);   
+                                        staticEntry);
 
       if (retVal) {
          var prefix;
@@ -262,7 +262,7 @@ TamperOptions.prototype = {
       }
    },
 
-   deleteItem : function() {  
+   deleteItem : function() {
       var item = this.itemsList.selectedItem.firstChild;
       if (item && this.itemText.tamperItemKey) {
          if (window.confirm(this.langMessage("delete.prompt", [item.getAttribute("label")]))) {
@@ -292,11 +292,11 @@ TamperOptions.prototype = {
    importPreferences : function() {
       var input = TamperUtils.loadFile(this.langString("select.file"));
       if (input) {
-         // now parse the string, and update the preferences.         
+         // now parse the string, and update the preferences.
          // figure out the linebreak from the character at the end of the first line
          var linebreak = input.match(/(?:\[[Tt]amper[Dd]ata\])(((\n+)|(\r+))+)/m)[1];
          var inputArray = input.split(linebreak);
-         
+
          var headerRe = /\[[Tt]amper[Dd]ata\]/;
          if (headerRe.test(inputArray[0])) {
             var keyValue, key, value;

@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<!-- 
+<!--
   **** BEGIN LICENSE BLOCK ****
   Copyright(c) 2002-2003 Daniel Savard.
 
   LiveHTTPHeaders: this programs have two purpose
-  - Add a tab in PageInfo to show http headers sent and received 
+  - Add a tab in PageInfo to show http headers sent and received
   - Add a tool that display http headers in real time while loading pages
 
   This program is free software; you can redistribute it and/or modify it under
   the terms of the GNU General Public License as published by the Free
-  Software Foundation; either version 2 of the License, or (at your option) 
+  Software Foundation; either version 2 of the License, or (at your option)
   any later version.
 
-  This program is distributed in the hope that it will be useful, but 
-  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
-  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for 
+  This program is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
   more details.
-  
+
   You should have received a copy of the GNU General Public License along with
   this program; if not, write to the Free Software Foundation, Inc., 59 Temple
   Place, Suite 330, Boston, MA 02111-1307 USA
@@ -99,9 +99,9 @@
         </treecols>
         <treechildren flex="1"/>
       </tree>
-      <scrollbar id="headerinfo-dump-scroll" curpos="0" maxpos="0" pageincrement="0" 
+      <scrollbar id="headerinfo-dump-scroll" curpos="0" maxpos="0" pageincrement="0"
                  orient="horizontal" />
-      
+
     <hbox align="right" valign="middle">
       <button icon="save" label="&livehttpheaders.live.saveall;" id="headerinfo-saveall"
               oncommand="livehttpheaders.live.oHeaderInfoLive.saveAll();" observes="datapresent" />
@@ -109,7 +109,7 @@
               oncommand="livehttpheaders.live.oHeaderInfoLive.replay();" disabled="true"
 	      tooltiptext="&livehttpheaders.live.replay.tips;" />
       <separator class="thin" flex="1" />
-      <checkbox label="&livehttpheaders.live.capture;" checked="true" 
+      <checkbox label="&livehttpheaders.live.capture;" checked="true"
                 oncommand="livehttpheaders.live.oHeaderInfoLive.capture(this.checked)" />
       <separator class="thin" flex="1" />
       <button icon="clear" label="&livehttpheaders.live.clear;" id="headerinfo-clear"
@@ -143,7 +143,7 @@
       </menulist>
     </hbox>
     <separator class="thin" />
-    <checkbox id="headerinfo-style" 
+    <checkbox id="headerinfo-style"
               label="&livehttpheaders.config.usestyle;" checked="true"
               tooltiptext="&livehttpheaders.config.usestyle.tips;"
               oncommand="livehttpheaders.live.oHeaderInfoLive.setStyle(this.checked);livehttpheaders.generator.oGenerator.setStyle(this.checked);" />
@@ -172,7 +172,7 @@
     <hbox>
       <button label="&livehttpheaders.config.addsidebar;"
               tooltiptext="&livehttpheaders.config.addsidebar.tips;"
-              disabled="false" 
+              disabled="false"
               oncommand="livehttpheaders.panel.addPanel('&livehttpheaders.live.title;',
               'chrome://livehttpheaders/content/LiveHTTPSideBar.xul',
               '&livehttpheaders.config.addsidebar.added;',
@@ -201,9 +201,9 @@
           <label value="&livehttpheaders.about.currentversion;"/>
         </hbox>
         <hbox align="center">
-          <button label="&livehttpheaders.about.homepage;" 
+          <button label="&livehttpheaders.about.homepage;"
                   onclick="livehttpheaders.info.checkForUpdate();"/>
-          <button label="&livehttpheaders.about.checkforupdate;" 
+          <button label="&livehttpheaders.about.checkforupdate;"
                   onclick="livehttpheaders.info.checkForUpdate('&livehttpheaders.about.currentversion;');"/>
         </hbox>
         </vbox>
@@ -254,7 +254,7 @@
       <label value="Wladimir Palant" />
       <label value="Wojtek Meler" />
     </groupbox>
-    
+
     <spacer flex="1"/>
     <hbox>
       <spacer flex="1" />
