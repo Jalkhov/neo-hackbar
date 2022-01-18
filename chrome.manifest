@@ -1,7 +1,8 @@
-content hackbar chrome/content/
-overlay chrome://browser/content/browser.xul chrome://hackbar/content/hackbar.xul
-locale hackbar en-US chrome/locale/en-US/
-skin hackbar classic/1.0 chrome/skin/
+content 	hackbar chrome/content/
+overlay 	chrome://browser/content/browser.xul chrome://hackbar/content/hackbar.xul
+locale 		hackbar en-US chrome/locale/en-US/
+skin  		hackbar classic/1.0 chrome/skin/
+style 		chrome://global/content/customizeToolbar.xul chrome://hackbar/skin/hackbar.css
 
 overlay	chrome://navigator/content/pageInfo.xul	chrome://livehttpheaders/content/PageInfoOverlay.xul
 overlay	chrome://navigator/content/pageinfo/pageInfo.xul	chrome://livehttpheaders/content/PageInfoOverlay.xul
@@ -44,8 +45,8 @@ overlay chrome://browser/content/browser.xul chrome://tamperdata/content/Sidebar
 content viewsource jar:chrome/viewsource.jar!/content/
 overlay chrome://navigator/content/navigator.xul chrome://viewsource/content/viewsourceOverlay.xul
 overlay chrome://browser/content/browser.xul chrome://viewsource/content/viewsourceOverlay.xul
+skin	viewsource	classic/1.0	jar:chrome/viewsource.jar!/skin/
 style chrome://global/content/customizeToolbar.xul chrome://viewsource/skin/viewsource.css
-skin viewsource classic/1.0 jar:chrome/viewsource.jar!/skin/
 locale viewsource en jar:chrome/viewsource.jar!/locale/en/
 locale viewsource nl jar:chrome/viewsource.jar!/locale/nl/
 locale viewsource fr jar:chrome/viewsource.jar!/locale/fr/

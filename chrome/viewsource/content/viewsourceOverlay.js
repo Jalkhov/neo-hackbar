@@ -283,7 +283,7 @@ var gViewSourceExtensionObject = (function() {
 
 			// Add our button and show the addon-bar.
 			if (addonbar) {
-				set_attr(addonbar, 'currentset', (addonbar.currentSet = (addonbar.currentSet + ',vs-toolbarpalette-icon').replace(/^\s*,+/, '')));
+				set_attr(addonbar, 'currentset', (addonbar.currentSet = (addonbar.currentSet + ',viewsourceToolbarButton').replace(/^\s*,+/, '')));
 				set_attr(addonbar, 'collapsed', String(addonbar.collapsed = false));
 
 				addonbar = void (document.persist('addon-bar', 'currentset') || document.persist('addon-bar', 'collapsed'));

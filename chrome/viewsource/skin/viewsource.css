@@ -1,19 +1,36 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* The following rule-set will hide the ugly dropmarker in the toolbarpalette button and hide statusbar button when the statusbar is a child of the addonbar (Firefox 4)..; */
-.vs-app-icon .toolbarbutton-menubutton-dropmarker, .vs-app-icon .toolbarbutton-menu-dropmarker, #addon-bar > #status-bar .vs-app-icon {
-	display:none !important;
+#viewsourceToolbarButton {
+    list-style-image: url("chrome://viewsource/skin/icon-24.png");
 }
 
-#vs-headers-url-list menuitem[disabled="true"], #vs-sidebar-deck tree[disabled="true"] > treechildren::-moz-tree-cell-text {
-	font-style:italic;
-	color:graytext;
+[iconsize="small"] #viewsourceToolbarButton
+{
+  list-style-image: url("chrome://viewsource/skin/icon-16.png");
+}
+
+
+/* The following rule-set will hide the ugly
+dropmarker in the toolbarpalette button and hide
+statusbar button when the statusbar is a child of
+the addonbar (Firefox 4)..;
+.vs-app-icon .toolbarbutton-menubutton-dropmarker,
+.vs-app-icon .toolbarbutton-menu-dropmarker,
+#addon-bar > #status-bar .vs-app-icon {
+    display: none !important;
+}
+*/
+
+#vs-headers-url-list menuitem[disabled="true"],
+#vs-sidebar-deck tree[disabled="true"] > treechildren::-moz-tree-cell-text {
+    font-style: italic;
+    color: graytext;
 }
 
 #vs-sidebar-header {
-	border-bottom:1px solid threedshadow !important;
-	background-color:-moz-dialog;
-	-moz-appearance:none;
+    border-bottom: 1px solid threedshadow !important;
+    background-color: -moz-dialog;
+    -moz-appearance: none;
 }
 
 /* The sidebar splitter..; /
@@ -22,116 +39,136 @@
 	border-left:2px solid activeborder;
 }
 */
-#vs-sidebar-resizer, #vs-sidebar-resizer grippy {
-	transition:3s;
+#vs-sidebar-resizer,
+#vs-sidebar-resizer grippy {
+    transition: 3s;
 }
 
 #vs-sidebar-resizer:hover {
-	background-color:-moz-menuhover;
-	border-color:-moz-menuhover;
+    background-color: -moz-menuhover;
+    border-color: -moz-menuhover;
 }
 
 #vs-sidebar-resizer:hover grippy {
-	background-color:-moz-menuhover;
+    background-color: -moz-menuhover;
 }
 
 #vs-sidebar-box treechildren::-moz-tree-image {
-	height:16px;
-	width:16px;
+    height: 16px;
+    width: 16px;
 }
 
 /* Hide disabled menuitems in the tree popupMenus..; */
-#popupTreeContext menuitem[disabled="true"], #popupTreeContext menuseparator[disabled="true"] {
-	display:none;
+#popupTreeContext menuitem[disabled="true"],
+#popupTreeContext menuseparator[disabled="true"] {
+    display: none;
 }
 
 /* Make the menuseparator full width; usually extra space is allocated to the left to allow for icons and such..; */
 #vs-headers-url-list menuseparator {
-	margin-left:-32px !important;
+    margin-left: -32px !important;
 }
 
-#vs-sidebar-deck tree, #vs-sidebar-deck listbox {
-	margin:5px;
+#vs-sidebar-deck tree,
+#vs-sidebar-deck listbox {
+    margin: 5px;
 }
 
 .vs-view-all {
-	font-weight:bold;
+    font-weight: bold;
 }
 
-.vs-toolbar menulist, .vs-toolbar button {
-	max-height:32px;
+.vs-toolbar menulist,
+.vs-toolbar button {
+    max-height: 32px;
 }
 
-.vs-new-window { list-style-image:url(newwin.png); }
-.vs-refresh { list-style-image:url("refresh.png"); }
-.vs-app-icon { list-style-image:url("vs16.png"); }
-.vs-close { list-style-image:url("close.png"); }
-.vs-class0 { list-style-image:url("html.png"); }
-.vs-class1 { list-style-image:url("css.png"); }
-.vs-class2 { list-style-image:url("js.png"); }
-.vs-copy { list-style-image:url("copy.png"); }
+.vs-new-window {
+    list-style-image: url(chrome://viewsource/skin/chrome://viewsource/skin/newwin.png);
+}
+.vs-refresh {
+    list-style-image: url("chrome://viewsource/skin/chrome://viewsource/skin/refresh.png");
+}
+/*
+.vs-app-icon {
+    list-style-image: url("icon-16.png");
+}
+*/
+.vs-close {
+    list-style-image: url("chrome://viewsource/skin/close.png");
+}
+.vs-class0 {
+    list-style-image: url("chrome://viewsource/skin/html.png");
+}
+.vs-class1 {
+    list-style-image: url("chrome://viewsource/skin/css.png");
+}
+.vs-class2 {
+    list-style-image: url("chrome://viewsource/skin/js.png");
+}
+.vs-copy {
+    list-style-image: url("chrome://viewsource/skin/copy.png");
+}
 
 #vs-sidebar-box {
-	background:-moz-dialog;
+    background: -moz-dialog;
 }
 
 /* The dropmarker is a bit to low. */
 .vs-dropmarker {
-	margin-top:-6px;
+    margin-top: -6px;
 }
 
 .vs-special {
-	font-style:italic;
+    font-style: italic;
 }
 
 .vs-toolbar {
-	padding-top:5px;
+    padding-top: 5px;
 }
 
 /* About dialog stuff */
 #vs-about-title {
-	font:bold 20px "Segoe Script", Verdana, Tahoma, Fantasy;
-	background:url("vs.png") 10px center no-repeat;
-	text-shadow:.07em .07em .07em #096;
-	padding:0 0 0 50px;
-	border:none;
-	color:#600;
-	margin:0;
+    font: bold 20px "Segoe Script", Verdana, Tahoma, Fantasy;
+    background: url("icon-32.png") 10px center no-repeat;
+    text-shadow: 0.07em 0.07em 0.07em #096;
+    padding: 0 0 0 50px;
+    border: none;
+    color: #600;
+    margin: 0;
 }
 
 #vs-about-group {
-	border:1px solid activeborder;	/* On Linux a groupbox doesn't have any borders..! */
-	box-shadow:0 0 8px #666;
-	border-radius:6px;
-	margin:15px 10px;
-	padding:16px;
+    border: 1px solid activeborder; /* On Linux a groupbox doesn't have any borders..! */
+    box-shadow: 0 0 8px #666;
+    border-radius: 6px;
+    margin: 15px 10px;
+    padding: 16px;
 }
-
 
 /* Every direct child of #vs-about-group, except the first..; */
 #vs-about-group > * + * {
-	margin-top:12px;
+    margin-top: 12px;
 }
 
 /* Every description element which is not a direct child of #vs-about-group..; */
 #vs-about-group > * > description {
-	text-shadow:0 1px 0 #CCC;
-	font-weight:bold;
-	margin-bottom:0;
-	padding:0;
+    text-shadow: 0 1px 0 #ccc;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 /* Every direct child of a direct child of #vs-about-group, except the first..; */
 #vs-about-group > * > * + * {
-	padding-left:10px;
+    padding-left: 10px;
 }
 
 .vs-text-link {
-	transition:1s;
-	color:#900;
+    transition: 1s;
+    color: #900;
 }
 
 .vs-text-link:hover {
-	color:#009;
+    color: #009;
 }
-

@@ -81,7 +81,8 @@
 
 	<!-- Context menu -->
 	<popup id="contentAreaContextMenu">
-		<menu class="menu-iconic vs-app-icon" label="&vs.vs;">
+		<menu class="menu-iconic vs-app-icon"
+      label="&vs.vs;">
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</menu>
 	</popup>
@@ -205,7 +206,11 @@
 	<!-- Browser toolbar palette -->
 	<toolbarpalette id="BrowserToolbarPalette">
 		<!-- This element needs an ID in order for persist to work! -->
-		<toolbarbutton id="vs-toolbarpalette-icon" label="&vs.vs;" type="menu" class="toolbarbutton-1 chromeclass-toolbar-additional vs-app-icon" tooltiptext="&vs.vs;">
+		<toolbarbutton id="vs-toolbarpalette-icon"
+                   class="toolbarbutton-1 chromeclass-toolbar-additional"
+                   label="&vs.vs;"
+                   type="menu"
+                   tooltiptext="&vs.vs;">
 			<menupopup onpopupshowing="gViewSourceExtensionObject.onMainPopupShowing(event);"/>
 		</toolbarbutton>
 	</toolbarpalette>
