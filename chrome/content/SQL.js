@@ -5,24 +5,26 @@ HackBar.SQL = {
     selectionToSQLChar: function (dbEngine) {
         var charStringArray = new Array();
         var txt = hackBar.getSelectedText();
-        var decimal;
-        for (var c = 0; c < txt.length; c++) {
-            decimal = txt.charCodeAt(c);
-            charStringArray.push(decimal);
+        if(txt != undefined){
+            var decimal;
+            for (var c = 0; c < txt.length; c++) {
+                decimal = txt.charCodeAt(c);
+                charStringArray.push(decimal);
+            }
+            var charString = "";
+            switch (dbEngine) {
+                case "mysql":
+                    charString = "CHAR(" + charStringArray.join(",") + ")";
+                    break;
+                case "mssql":
+                    charString = " CHAR(" + charStringArray.join(") + CHAR(") + ")";
+                    break;
+                case "oracle":
+                    charString = " CHR(" + charStringArray.join(") || CHR(") + ")";
+                    break;
+            }
+            hackBar.setSelectedText(charString);
         }
-        var charString = "";
-        switch (dbEngine) {
-            case "mysql":
-                charString = "CHAR(" + charStringArray.join(",") + ")";
-                break;
-            case "mssql":
-                charString = " CHAR(" + charStringArray.join(") + CHAR(") + ")";
-                break;
-            case "oracle":
-                charString = " CHR(" + charStringArray.join(") || CHR(") + ")";
-                break;
-        }
-        hackBar.setSelectedText(charString);
     },
     UnionSelectStatement: function (encoding) {
         var prefManager = Components.classes[

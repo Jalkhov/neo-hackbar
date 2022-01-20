@@ -3,7 +3,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>neohackbar@Jalkhov</em:id>
     <em:iconURL>chrome://hackbar/skin/addon-icon/icon-64.png</em:iconURL>
-    <em:version>1.0.0</em:version>
+    <em:version>1.0.1</em:version>
     <em:type>2</em:type>
     <em:name>Neo Hackbar</em:name>
     <em:description>Hackbar modified by Jalkhov. Credits to Johan Adriaans and Pedro Laguna (The coder's of the original Hackbar) also t.pro and Renegade18 for further modifications

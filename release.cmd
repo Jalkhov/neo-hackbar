@@ -1,7 +1,7 @@
 @echo off
-set VER=1.0.0
+set VER=1.0.1
 
-:: BUILD .jar files
+:: PACK .jar files
 cd chrome
 
 cd livehttpheaders
