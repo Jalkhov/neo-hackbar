@@ -29,3 +29,5 @@ This Hackbar benefits from the modifications made by t.pro and Renegade18
 Original Hackbar Developers: Johan Adriaans and Pedro Laguna.
 
 Icons courtesy of Fatcow https://www.fatcow.com/free-icons
+
+Extension logo from http://www.fasticon.com/
