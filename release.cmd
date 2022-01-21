@@ -1,5 +1,5 @@
 @echo off
-set VER=1.1.0
+set VER=1.1.1
 
 :: PACK .jar files
 cd chrome
