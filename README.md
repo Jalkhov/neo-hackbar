@@ -2,7 +2,6 @@
 
 Available in:
 * Pale Moon
-* Basilisk
 
 This version of the Hackbar fixes many bugs with respect to some existing variants on the web, has an improved but not overdone interface and comes with some of the best extensions for pentesting, among them:
 
