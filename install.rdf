@@ -3,7 +3,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{EF2A2798-7A5E-11EC-A604-DF17787BF106}</em:id>
     <em:iconURL>chrome://hackbar/skin/addon-icon/icon-64.png</em:iconURL>
-    <em:version>1.1.1</em:version>
+    <em:version>1.1.2</em:version>
     <em:type>2</em:type>
     <em:name>Neo Hackbar</em:name>
     <em:description>Hackbar modified by Jalkhov. Credits to Johan Adriaans and Pedro Laguna (The coder's of the original Hackbar) also t.pro and Renegade18 for further modifications
@@ -20,6 +20,15 @@
         <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
         <em:minVersion>28.*</em:minVersion>
         <em:maxVersion>29.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- BASILISK -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>52.0a1</em:minVersion>
+        <em:maxVersion>55.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
