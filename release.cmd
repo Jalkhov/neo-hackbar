@@ -27,4 +27,4 @@ sed -i -E "s/releases\/v[0-9].[0-9].[0-9]/releases\/v%VER%/" README.md
 
 set XPI=neo-hackbar-%VER%.xpi
 if exist %XPI% del %XPI%
-zip -r9q %XPI% * -x .git/* .gitignore .gitattributes .editorconfig download.png update.xml LICENSE README.md *.cmd *.xpi chrome/livehttpheaders/\* chrome/noredirect/\* chrome/tamperdata/\* chrome/viewsource/\*
+zip -r9q %XPI% * -x .git/* .gitignore .gitattributes .editorconfig download.png addon-screenshot.png update.xml LICENSE README.md *.cmd *.xpi chrome/livehttpheaders/\* chrome/noredirect/\* chrome/tamperdata/\* chrome/viewsource/\*
