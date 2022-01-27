@@ -2,7 +2,7 @@
 
 # Neo Hackbar 
 
-<center><a href="https://github.com/Jalkhov/neo-hackbar/releases/v1.1.2"><img src="download.png" alt="download" style="zoom:10%;" /></a></center>
+<a href="https://github.com/Jalkhov/neo-hackbar/releases/v1.1.2"><img src="download.png" alt="download" style="width:250px" /></a>
 
 **Tested in:**
 
