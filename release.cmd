@@ -1,5 +1,5 @@
 @echo off
-set VER=1.1.1
+set VER=1.1.2
 
 :: PACK .jar files
 cd chrome
@@ -22,7 +22,9 @@ zip -r9q ../viewsource.jar *
 cd ../..
 
 sed -i -E "s/version>.+?</version>%VER%</" install.rdf
+sed -i -E "s/latest-v[0-9].[0-9].[0-9]/latest-v%VER%/" README.md
+sed -i -E "s/releases\/v[0-9].[0-9].[0-9]/releases\/v%VER%/" README.md
 
 set XPI=neo-hackbar-%VER%.xpi
 if exist %XPI% del %XPI%
-zip -r9q %XPI% * -x .git/* .gitignore .gitattributes .editorconfig update.xml LICENSE README.md *.cmd *.xpi *.exe chrome/livehttpheaders/\* chrome/noredirect/\* chrome/tamperdata/\* chrome/viewsource/\*
+zip -r9q %XPI% * -x .git/* .gitignore .gitattributes .editorconfig update.xml LICENSE README.md *.cmd *.xpi chrome/livehttpheaders/\* chrome/noredirect/\* chrome/tamperdata/\* chrome/viewsource/\*
