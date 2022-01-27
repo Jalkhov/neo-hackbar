@@ -22,18 +22,12 @@
   ]]>
   </script>
 
-  <popupset>
-    <tooltip id="hackbar-tooltip">
-      <label class="hackbar-tooltip-version" value="Neo Hackbar" />
-    </tooltip>
-  </popupset>
-
   <toolbarpalette id="BrowserToolbarPalette">
     <toolbarbutton id="hackBarToolbarButton"
                    class="toolbarbutton-1 chromeclass-toolbar-additional"
                    oncommand="hackBar.toggleBar()"
                    label="HackBar"
-                   tooltip="hackbar-tooltip">
+                   tooltiptext="Neo Hackbar">
       <menupopup id="blank" />
     </toolbarbutton>
   </toolbarpalette>
