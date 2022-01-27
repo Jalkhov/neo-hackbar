@@ -2,6 +2,8 @@
 
 # Neo Hackbar 
 
+![Addon screenshot](addon-screenshot.png)
+
 <a href="https://github.com/Jalkhov/neo-hackbar/releases/v1.1.2"><img src="download.png" alt="download" style="width:250px" /></a>
 
 **Tested in:**
